@@ -1,0 +1,21 @@
+label: Procedural public desk; not the historical real scan
+old_map: assets/scan/old_map.ply
+desk:
+  width_x: 2.0
+  depth_y: 0.8
+  height_z: 0.8
+  top_thickness: 0.05
+  solid_block: false
+workspace_min: [-0.6, -1.8, 0.0]
+workspace_max: [3.0, 1.8, 2.0]
+gaussian_count: 12000
+objects:
+  box:
+    size: [0.25, 0.18, 0.12]
+    position: [1.2, 0.5, 0.86]
+    yaw_deg: 0
+    color: [0.4, 0.26, 0.15]
+  mug:
+    size: [0.08, 0.08, 0.1]
+    position: [0.5, 0.4, 0.85]
+    color: [0.8, 0.8, 0.8]

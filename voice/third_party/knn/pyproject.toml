@@ -1,0 +1,9 @@
+[project]
+name = "relay-knn-vendor"
+version = "0.0.0+c616845c4e30"
+requires-python = ">=3.11"
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+[tool.hatch.build.targets.wheel]
+packages = ["relay_knn_vendor"]

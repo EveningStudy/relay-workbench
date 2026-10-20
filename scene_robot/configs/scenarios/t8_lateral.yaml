@@ -1,0 +1,4 @@
+name: t8_lateral
+duration: 22
+events: []
+trajectory: {vx: {amplitude: 0.05, omega: 0.25}, joints: {head_tilt: {center: 0, amplitude: 0.2, omega: 0.5}}}

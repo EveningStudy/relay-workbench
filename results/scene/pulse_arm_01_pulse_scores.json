@@ -1,0 +1,434 @@
+{
+  "category": "arm",
+  "planned_pulses": 20,
+  "issued_pulses": 20,
+  "unissued_pulses": 0,
+  "summary_ms": {
+    "joint_motion_ms": {
+      "n": 20,
+      "median": 99.712185,
+      "p95": 134.45592065000002,
+      "max": 135.466277,
+      "no_response": 0
+    },
+    "first_changed_camera_capture_ms": {
+      "n": 0,
+      "median": null,
+      "p95": null,
+      "max": null,
+      "no_response": 20
+    },
+    "post_motion_geometry_dom_ms": {
+      "n": 0,
+      "median": null,
+      "p95": null,
+      "max": null,
+      "no_response": 20
+    }
+  },
+  "pulses": [
+    {
+      "index": 0,
+      "category": "arm",
+      "key": "i",
+      "command_ns": 1792349165371296400,
+      "keydown_return_ns": 1792349165448381600,
+      "release_ns": 1792349165703221600,
+      "keyup_return_ns": 1792349165705745700,
+      "window_end_ns": 1792349166323043900,
+      "joint_motion_ns": 1792349165506762677,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 135.466277,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 1,
+      "category": "arm",
+      "key": "k",
+      "command_ns": 1792349166323043900,
+      "keydown_return_ns": 1792349166330129500,
+      "release_ns": 1792349166585298300,
+      "keyup_return_ns": 1792349166587374500,
+      "window_end_ns": 1792349167273350300,
+      "joint_motion_ns": 1792349166423429307,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 100.385407,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 2,
+      "category": "arm",
+      "key": "i",
+      "command_ns": 1792349167273350300,
+      "keydown_return_ns": 1792349167275955100,
+      "release_ns": 1792349167528315500,
+      "keyup_return_ns": 1792349167532369100,
+      "window_end_ns": 1792349168233051300,
+      "joint_motion_ns": 1792349167365095936,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 91.745636,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 3,
+      "category": "arm",
+      "key": "k",
+      "command_ns": 1792349168233051300,
+      "keydown_return_ns": 1792349168235753200,
+      "release_ns": 1792349168492058200,
+      "keyup_return_ns": 1792349168494841900,
+      "window_end_ns": 1792349169179230500,
+      "joint_motion_ns": 1792349168331762564,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 98.711264,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 4,
+      "category": "arm",
+      "key": "i",
+      "command_ns": 1792349169179230500,
+      "keydown_return_ns": 1792349169180755700,
+      "release_ns": 1792349169433683300,
+      "keyup_return_ns": 1792349169438298600,
+      "window_end_ns": 1792349170123281600,
+      "joint_motion_ns": 1792349169273429193,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 94.198693,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 5,
+      "category": "arm",
+      "key": "k",
+      "command_ns": 1792349170123281600,
+      "keydown_return_ns": 1792349170126831600,
+      "release_ns": 1792349170387432900,
+      "keyup_return_ns": 1792349170391046900,
+      "window_end_ns": 1792349171072558500,
+      "joint_motion_ns": 1792349170215095822,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 91.814222,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 6,
+      "category": "arm",
+      "key": "i",
+      "command_ns": 1792349171072558500,
+      "keydown_return_ns": 1792349171074076300,
+      "release_ns": 1792349171347264900,
+      "keyup_return_ns": 1792349171349791200,
+      "window_end_ns": 1792349172030693000,
+      "joint_motion_ns": 1792349171173429117,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 100.870617,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 7,
+      "category": "arm",
+      "key": "k",
+      "command_ns": 1792349172030693000,
+      "keydown_return_ns": 1792349172066140900,
+      "release_ns": 1792349172326372000,
+      "keyup_return_ns": 1792349172332437200,
+      "window_end_ns": 1792349172977529800,
+      "joint_motion_ns": 1792349172165095744,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 134.402744,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 8,
+      "category": "arm",
+      "key": "i",
+      "command_ns": 1792349172977529800,
+      "keydown_return_ns": 1792349172980041900,
+      "release_ns": 1792349173239399000,
+      "keyup_return_ns": 1792349173242194400,
+      "window_end_ns": 1792349173920407000,
+      "joint_motion_ns": 1792349173081762374,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 104.232574,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 9,
+      "category": "arm",
+      "key": "k",
+      "command_ns": 1792349173920407000,
+      "keydown_return_ns": 1792349173922417600,
+      "release_ns": 1792349174183972600,
+      "keyup_return_ns": 1792349174185608900,
+      "window_end_ns": 1792349174924390000,
+      "joint_motion_ns": 1792349174023429003,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 103.022003,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 10,
+      "category": "arm",
+      "key": "i",
+      "command_ns": 1792349174924390000,
+      "keydown_return_ns": 1792349174927450700,
+      "release_ns": 1792349175183743200,
+      "keyup_return_ns": 1792349175191723000,
+      "window_end_ns": 1792349175827932000,
+      "joint_motion_ns": 1792349175023428963,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 99.038963,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 11,
+      "category": "arm",
+      "key": "k",
+      "command_ns": 1792349175827932000,
+      "keydown_return_ns": 1792349175830772500,
+      "release_ns": 1792349176093826900,
+      "keyup_return_ns": 1792349176095968000,
+      "window_end_ns": 1792349176773635400,
+      "joint_motion_ns": 1792349175923428927,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 95.496927,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 12,
+      "category": "arm",
+      "key": "i",
+      "command_ns": 1792349176773635400,
+      "keydown_return_ns": 1792349176774962500,
+      "release_ns": 1792349177041004700,
+      "keyup_return_ns": 1792349177042529200,
+      "window_end_ns": 1792349177718930900,
+      "joint_motion_ns": 1792349176856762223,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 83.126823,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 13,
+      "category": "arm",
+      "key": "k",
+      "command_ns": 1792349177718930900,
+      "keydown_return_ns": 1792349177723988000,
+      "release_ns": 1792349177976364800,
+      "keyup_return_ns": 1792349177979692600,
+      "window_end_ns": 1792349178678840500,
+      "joint_motion_ns": 1792349177815095518,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 96.164618,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 14,
+      "category": "arm",
+      "key": "i",
+      "command_ns": 1792349178678840500,
+      "keydown_return_ns": 1792349178710516700,
+      "release_ns": 1792349178961700700,
+      "keyup_return_ns": 1792349178967332900,
+      "window_end_ns": 1792349179621753000,
+      "joint_motion_ns": 1792349178806762145,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 127.921645,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 15,
+      "category": "arm",
+      "key": "k",
+      "command_ns": 1792349179621753000,
+      "keydown_return_ns": 1792349179631818700,
+      "release_ns": 1792349179888328800,
+      "keyup_return_ns": 1792349179891438200,
+      "window_end_ns": 1792349180580891900,
+      "joint_motion_ns": 1792349179740095441,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 118.342441,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 16,
+      "category": "arm",
+      "key": "i",
+      "command_ns": 1792349180580891900,
+      "keydown_return_ns": 1792349180581901200,
+      "release_ns": 1792349180846011200,
+      "keyup_return_ns": 1792349180847520300,
+      "window_end_ns": 1792349181521344000,
+      "joint_motion_ns": 1792349180673428737,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 92.536837,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 17,
+      "category": "arm",
+      "key": "k",
+      "command_ns": 1792349181521344000,
+      "keydown_return_ns": 1792349181528387800,
+      "release_ns": 1792349181798027300,
+      "keyup_return_ns": 1792349181800751400,
+      "window_end_ns": 1792349182475322600,
+      "joint_motion_ns": 1792349181623428699,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 102.084699,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 18,
+      "category": "arm",
+      "key": "i",
+      "command_ns": 1792349182475322600,
+      "keydown_return_ns": 1792349182481040400,
+      "release_ns": 1792349182734356900,
+      "keyup_return_ns": 1792349182736539100,
+      "window_end_ns": 1792349183420030000,
+      "joint_motion_ns": 1792349182573428661,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 98.106061,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    },
+    {
+      "index": 19,
+      "category": "arm",
+      "key": "k",
+      "command_ns": 1792349183420030000,
+      "keydown_return_ns": 1792349183423908600,
+      "release_ns": 1792349183693779800,
+      "keyup_return_ns": 1792349183701906900,
+      "window_end_ns": 1792349184370030000,
+      "joint_motion_ns": 1792349183523428623,
+      "camera_change_ns": null,
+      "dom_change_ns": null,
+      "joint_motion_ms": 103.398623,
+      "first_changed_camera_capture_ms": null,
+      "post_motion_geometry_dom_ms": null,
+      "missing_stages": [
+        "first_changed_camera_capture_ms",
+        "post_motion_geometry_dom_ms"
+      ]
+    }
+  ],
+  "joint_threshold": 0.002,
+  "joint_unit": "rad",
+  "scope": "All issued pulses, capped at the next command or 0.95 s. Drive >2 mm base_y; head/arm >0.002 rad in named joints is a new explicit joint generalization, not a frozen head/arm metric. Head-left RGB MAD >1, stride 8, then any later capture in geometry DOM: unchanged frozen chain proxy, not semantic motion or physical presentation. Percentiles include observed responses only; missing counts are separate. No pre-existing command-stage target; 150 ms applies to capture-to-DOM."
+}

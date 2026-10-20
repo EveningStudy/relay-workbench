@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "audio_samples": 48000,
+  "replay_counts": {
+    "joints": 20,
+    "odom": 20,
+    "frame": 80
+  },
+  "scope": "Synthetic functional replay; no performance, physical audio, human listening or GPU validation."
+}

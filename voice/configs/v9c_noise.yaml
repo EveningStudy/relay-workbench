@@ -1,0 +1,18 @@
+build: v9c
+initial_floor_rms: 0.0025
+minimum_floor_rms: 1.0e-05
+absolute_on_rms: 0.00015
+absolute_off_rms: 0.0001
+on_ratio: 2.2
+off_ratio: 1.5
+analysis_ms: 20
+hangover_ms: 250
+fade_ms: 5
+spectral: false
+v8:
+  spectral: false
+  post_gain: 0.4
+consistency:
+  enabled: false
+  spectral: false
+  post_gain: 1.0

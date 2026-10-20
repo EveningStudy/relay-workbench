@@ -1,0 +1,8 @@
+name: d5_wrist_outage
+duration: 22
+events:
+  - {at: 8, action: camera, camera: wrist_right, duration: 5, set: {delay_ms: 262}}
+  - {at: 13, action: camera, camera: wrist_right, duration: 2, set: {outages: [[13, 15]]}}
+trajectory:
+  joints:
+    head_pan: {center: 0, amplitude: 0.15, omega: 0.3}

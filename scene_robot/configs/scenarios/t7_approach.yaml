@@ -1,0 +1,4 @@
+name: t7_approach
+duration: 22
+events: []
+trajectory: {vy: {amplitude: 0.05, omega: 0.2}, joints: {head_pan: {center: 0, amplitude: 0.3, omega: 0.4}}}

@@ -1,0 +1,1304 @@
+{
+  "links": [
+    {
+      "name": "world",
+      "mass": 0.01,
+      "size": null,
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "base_slide_x",
+      "mass": 0.01,
+      "size": null,
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "base_slide_y",
+      "mass": 0.01,
+      "size": null,
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "base",
+      "mass": 8.19526547695717,
+      "size": [
+        0.5,
+        0.45,
+        0.16
+      ],
+      "center": [
+        0,
+        0,
+        0.1
+      ]
+    },
+    {
+      "name": "column_fixed",
+      "mass": 2.4300000000000006,
+      "size": [
+        0.1,
+        0.1,
+        0.54
+      ],
+      "center": [
+        0,
+        0,
+        0.27
+      ]
+    },
+    {
+      "name": "lift_link",
+      "mass": 1.569375,
+      "size": [
+        0.075,
+        0.075,
+        0.62
+      ],
+      "center": [
+        0,
+        0,
+        -0.3
+      ]
+    },
+    {
+      "name": "torso",
+      "mass": 7.128,
+      "size": [
+        0.2,
+        0.36,
+        0.22
+      ],
+      "center": [
+        0,
+        0,
+        0.12
+      ]
+    },
+    {
+      "name": "head_pan_link",
+      "mass": 0.3748500000000001,
+      "size": [
+        0.07,
+        0.07,
+        0.17
+      ],
+      "center": [
+        0,
+        0,
+        -0.08
+      ]
+    },
+    {
+      "name": "head",
+      "mass": 0.8814463312993933,
+      "size": [
+        0.16,
+        0.22,
+        0.11
+      ],
+      "center": [
+        0.035,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "head_cam_left",
+      "mass": 0.01,
+      "size": null,
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_shoulder_pitch_link",
+      "mass": 0.1398032614176756,
+      "size": [
+        0.085,
+        0.085,
+        0.085
+      ],
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_shoulder_roll_link",
+      "mass": 0.1398032614176756,
+      "size": [
+        0.085,
+        0.085,
+        0.085
+      ],
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_shoulder_yaw_link",
+      "mass": 0.5347410723714552,
+      "size": [
+        0.09,
+        0.09,
+        0.29
+      ],
+      "center": [
+        0,
+        0,
+        -0.145
+      ]
+    },
+    {
+      "name": "left_elbow_link",
+      "mass": 0.3201275576936394,
+      "size": [
+        0.075,
+        0.075,
+        0.25
+      ],
+      "center": [
+        0,
+        0,
+        -0.125
+      ]
+    },
+    {
+      "name": "left_wrist_yaw_link",
+      "mass": 0.1398032614176756,
+      "size": [
+        0.085,
+        0.085,
+        0.085
+      ],
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_wrist_pitch_link",
+      "mass": 0.1398032614176756,
+      "size": [
+        0.085,
+        0.085,
+        0.085
+      ],
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_wrist_roll_link",
+      "mass": 0.101985525935467,
+      "size": [
+        0.07,
+        0.08,
+        0.08
+      ],
+      "center": [
+        0,
+        0,
+        -0.04
+      ]
+    },
+    {
+      "name": "wrist_cam_l",
+      "mass": 0.01,
+      "size": null,
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_palm",
+      "mass": 0.08505,
+      "size": [
+        0.06,
+        0.09,
+        0.035
+      ],
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_finger_0",
+      "mass": 0.014175000000000004,
+      "size": [
+        0.025,
+        0.018,
+        0.07
+      ],
+      "center": [
+        0,
+        0,
+        -0.035
+      ]
+    },
+    {
+      "name": "left_finger_1",
+      "mass": 0.014175000000000004,
+      "size": [
+        0.025,
+        0.018,
+        0.07
+      ],
+      "center": [
+        0,
+        0,
+        -0.035
+      ]
+    },
+    {
+      "name": "head_cam_right",
+      "mass": 0.01,
+      "size": null,
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_shoulder_pitch_link",
+      "mass": 0.1398032614176756,
+      "size": [
+        0.085,
+        0.085,
+        0.085
+      ],
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_shoulder_roll_link",
+      "mass": 0.1398032614176756,
+      "size": [
+        0.085,
+        0.085,
+        0.085
+      ],
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_shoulder_yaw_link",
+      "mass": 0.5347410723714552,
+      "size": [
+        0.09,
+        0.09,
+        0.29
+      ],
+      "center": [
+        0,
+        0,
+        -0.145
+      ]
+    },
+    {
+      "name": "right_elbow_link",
+      "mass": 0.3201275576936394,
+      "size": [
+        0.075,
+        0.075,
+        0.25
+      ],
+      "center": [
+        0,
+        0,
+        -0.125
+      ]
+    },
+    {
+      "name": "right_wrist_yaw_link",
+      "mass": 0.1398032614176756,
+      "size": [
+        0.085,
+        0.085,
+        0.085
+      ],
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_wrist_pitch_link",
+      "mass": 0.1398032614176756,
+      "size": [
+        0.085,
+        0.085,
+        0.085
+      ],
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_wrist_roll_link",
+      "mass": 0.101985525935467,
+      "size": [
+        0.07,
+        0.08,
+        0.08
+      ],
+      "center": [
+        0,
+        0,
+        -0.04
+      ]
+    },
+    {
+      "name": "wrist_cam_r",
+      "mass": 0.01,
+      "size": null,
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_palm",
+      "mass": 0.08505,
+      "size": [
+        0.06,
+        0.09,
+        0.035
+      ],
+      "center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_finger_0",
+      "mass": 0.014175000000000004,
+      "size": [
+        0.025,
+        0.018,
+        0.07
+      ],
+      "center": [
+        0,
+        0,
+        -0.035
+      ]
+    },
+    {
+      "name": "right_finger_1",
+      "mass": 0.014175000000000004,
+      "size": [
+        0.025,
+        0.018,
+        0.07
+      ],
+      "center": [
+        0,
+        0,
+        -0.035
+      ]
+    }
+  ],
+  "joints": [
+    {
+      "name": "base_x",
+      "parent": "world",
+      "child": "base_slide_x",
+      "kind": "prismatic",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "limits": [
+        -3,
+        3
+      ],
+      "effort": 1500,
+      "velocity": 0.5
+    },
+    {
+      "name": "base_y",
+      "parent": "base_slide_x",
+      "child": "base_slide_y",
+      "kind": "prismatic",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits": [
+        -3,
+        3
+      ],
+      "effort": 1500,
+      "velocity": 0.5
+    },
+    {
+      "name": "base_yaw",
+      "parent": "base_slide_y",
+      "child": "base",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -12.56,
+        12.56
+      ],
+      "effort": 1500,
+      "velocity": 1.5
+    },
+    {
+      "name": "column_mount",
+      "parent": "base",
+      "child": "column_fixed",
+      "kind": "fixed",
+      "xyz": [
+        0,
+        0,
+        0.18
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "lift",
+      "parent": "column_fixed",
+      "child": "lift_link",
+      "kind": "prismatic",
+      "xyz": [
+        0,
+        0,
+        0.54
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        0,
+        0.45
+      ],
+      "effort": 1500,
+      "velocity": 0.15
+    },
+    {
+      "name": "hip_pitch",
+      "parent": "lift_link",
+      "child": "torso",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits": [
+        -0.2617993877991494,
+        0.7853981633974483
+      ],
+      "effort": 600,
+      "velocity": 0.5
+    },
+    {
+      "name": "head_pan",
+      "parent": "torso",
+      "child": "head_pan_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        0.38
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -1.8,
+        1.8
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "head_tilt",
+      "parent": "head_pan_link",
+      "child": "head",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits": [
+        -0.7,
+        1.1
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "head_cam_left_mount",
+      "parent": "head",
+      "child": "head_cam_left",
+      "kind": "fixed",
+      "xyz": [
+        0.12,
+        0.03,
+        0
+      ],
+      "rpy": [
+        -1.5707963267948966,
+        0.0,
+        -1.5707963267948966
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "left_shoulder_pitch",
+      "parent": "torso",
+      "child": "left_shoulder_pitch_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0.2,
+        0.22
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "left_shoulder_roll",
+      "parent": "left_shoulder_pitch_link",
+      "child": "left_shoulder_roll_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "left_shoulder_yaw",
+      "parent": "left_shoulder_roll_link",
+      "child": "left_shoulder_yaw_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "left_elbow",
+      "parent": "left_shoulder_yaw_link",
+      "child": "left_elbow_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        -0.29
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits": [
+        -2.4,
+        0.0
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "left_wrist_yaw",
+      "parent": "left_elbow_link",
+      "child": "left_wrist_yaw_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        -0.25
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "left_wrist_pitch",
+      "parent": "left_wrist_yaw_link",
+      "child": "left_wrist_pitch_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "left_wrist_roll",
+      "parent": "left_wrist_pitch_link",
+      "child": "left_wrist_roll_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "wrist_cam_l_mount",
+      "parent": "left_wrist_roll_link",
+      "child": "wrist_cam_l",
+      "kind": "fixed",
+      "xyz": [
+        -0.02,
+        0.1,
+        -0.15
+      ],
+      "rpy": [
+        2.41238898038469,
+        2.220446049250313e-16,
+        -1.5707963267948968
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "left_palm_mount",
+      "parent": "left_wrist_roll_link",
+      "child": "left_palm",
+      "kind": "fixed",
+      "xyz": [
+        0,
+        0,
+        -0.09
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "left_finger_0_joint",
+      "parent": "left_palm",
+      "child": "left_finger_0",
+      "kind": "prismatic",
+      "xyz": [
+        0,
+        0.025,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits": [
+        0,
+        0.025
+      ],
+      "effort": 20,
+      "velocity": 0.1
+    },
+    {
+      "name": "left_finger_1_joint",
+      "parent": "left_palm",
+      "child": "left_finger_1",
+      "kind": "prismatic",
+      "xyz": [
+        0,
+        -0.025,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        -1,
+        0
+      ],
+      "limits": [
+        0,
+        0.025
+      ],
+      "effort": 20,
+      "velocity": 0.1
+    },
+    {
+      "name": "head_cam_right_mount",
+      "parent": "head",
+      "child": "head_cam_right",
+      "kind": "fixed",
+      "xyz": [
+        0.12,
+        -0.03,
+        0
+      ],
+      "rpy": [
+        -1.5707963267948966,
+        0.0,
+        -1.5707963267948966
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "right_shoulder_pitch",
+      "parent": "torso",
+      "child": "right_shoulder_pitch_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        -0.2,
+        0.22
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "right_shoulder_roll",
+      "parent": "right_shoulder_pitch_link",
+      "child": "right_shoulder_roll_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "right_shoulder_yaw",
+      "parent": "right_shoulder_roll_link",
+      "child": "right_shoulder_yaw_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "right_elbow",
+      "parent": "right_shoulder_yaw_link",
+      "child": "right_elbow_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        -0.29
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits": [
+        -2.4,
+        0.0
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "right_wrist_yaw",
+      "parent": "right_elbow_link",
+      "child": "right_wrist_yaw_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        -0.25
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "right_wrist_pitch",
+      "parent": "right_wrist_yaw_link",
+      "child": "right_wrist_pitch_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "right_wrist_roll",
+      "parent": "right_wrist_pitch_link",
+      "child": "right_wrist_roll_link",
+      "kind": "revolute",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "wrist_cam_r_mount",
+      "parent": "right_wrist_roll_link",
+      "child": "wrist_cam_r",
+      "kind": "fixed",
+      "xyz": [
+        -0.02,
+        -0.1,
+        -0.15
+      ],
+      "rpy": [
+        2.41238898038469,
+        2.220446049250313e-16,
+        -1.5707963267948968
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "right_palm_mount",
+      "parent": "right_wrist_roll_link",
+      "child": "right_palm",
+      "kind": "fixed",
+      "xyz": [
+        0,
+        0,
+        -0.09
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits": [
+        -2.6,
+        2.6
+      ],
+      "effort": 80,
+      "velocity": 1.5
+    },
+    {
+      "name": "right_finger_0_joint",
+      "parent": "right_palm",
+      "child": "right_finger_0",
+      "kind": "prismatic",
+      "xyz": [
+        0,
+        0.025,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits": [
+        0,
+        0.025
+      ],
+      "effort": 20,
+      "velocity": 0.1
+    },
+    {
+      "name": "right_finger_1_joint",
+      "parent": "right_palm",
+      "child": "right_finger_1",
+      "kind": "prismatic",
+      "xyz": [
+        0,
+        -0.025,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        -1,
+        0
+      ],
+      "limits": [
+        0,
+        0.025
+      ],
+      "effort": 20,
+      "velocity": 0.1
+    }
+  ]
+}

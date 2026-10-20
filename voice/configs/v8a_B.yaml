@@ -1,0 +1,8 @@
+name: Relay V8a B - vocoder sheen
+sample_rate: 24000
+f0_hz: 160
+vocoder_mix: 1.0
+dry_above_hz: 9200
+metal_delay_ms: 2.0
+metal_mix: 0.16
+output_gain: 1.2

@@ -1,0 +1,4 @@
+name: t10_patrol
+duration: 60
+events: []
+trajectory: {vx: {amplitude: 0.04, omega: 0.2}, vy: {amplitude: 0.04, omega: 0.3}, joints: {head_pan: {center: 0, amplitude: 0.4, omega: 0.3}, hip_pitch: {center: 0, amplitude: 0.15, omega: 0.2}}}

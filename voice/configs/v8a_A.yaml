@@ -1,0 +1,8 @@
+name: Relay V8a A - clean synthetic
+sample_rate: 24000
+f0_hz: 185
+vocoder_mix: 0.98
+dry_above_hz: 6500
+metal_delay_ms: 1.25
+metal_mix: 0.045
+output_gain: 1.2

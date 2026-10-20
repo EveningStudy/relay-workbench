@@ -1,0 +1,14 @@
+default_mode: v8
+low_latency_config: configs/v8a_B.yaml
+model: 120ms
+device: cpu
+threads: 4
+shift_hz: 70
+target_embedding: references/target_embedding.npy
+target_selection: single
+gate_rms: 0.0003
+silence_hangover_packets: 4
+fade_samples_16k: 320
+ingress_samples_16k: 2560
+reservoir_capacity_samples_16k: 6400
+seed: 42

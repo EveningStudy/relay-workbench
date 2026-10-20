@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:12,451
+Synthetic source: Relay Workbench processes voice in small audio blocks. The robot character runs locally on the CPU. This example uses synthetic speech.
+
+2
+00:00:12,951 --> 00:00:25,402
+Default robot character: Relay Workbench processes voice in small audio blocks. The robot character runs locally on the CPU. This example uses synthetic speech.

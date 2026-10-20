@@ -1,0 +1,21 @@
+name: Relay
+provisional: true
+density_kg_m3: 450
+base_size: [0.50, 0.45, 0.16]
+column_size: [0.10, 0.10, 0.54]
+torso_size: [0.20, 0.36, 0.22]
+arm_lengths: [0.29, 0.25, 0.08]
+stereo_baseline: 0.060
+lift_stroke: 0.45
+physics_hz: 120
+self_collision: false
+initial:
+  base_x: 0.6
+  base_y: -0.75
+  base_yaw: 1.57079632679
+  head_tilt: 0.35
+  lift: 0.15
+  left_shoulder_pitch: -1.0
+  right_shoulder_pitch: -1.0
+  left_elbow: -0.8
+  right_elbow: -0.8

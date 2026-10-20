@@ -1,0 +1,12 @@
+name: d6_async_motion
+duration: 22
+events:
+  - {at: 0, action: camera, camera: head_left, duration: 22, set: {exposure_jitter_ms: 10}}
+  - {at: 0, action: camera, camera: wrist_left, duration: 22, set: {exposure_jitter_ms: 10}}
+  - {at: 0, action: camera, camera: wrist_right, duration: 22, set: {exposure_jitter_ms: 10}}
+  - {at: 8, action: camera, camera: head_right, duration: 3, set: {timestamp_bias_ms: 50}}
+  - {at: 15, action: camera, camera: head_right, duration: 3, set: {timestamp_bias_ms: 50}}
+trajectory:
+  vx: {amplitude: 0.045, omega: 0.5}
+  joints:
+    head_pan: {center: 0, amplitude: 0.4, omega: 0.5}

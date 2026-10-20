@@ -1,0 +1,28 @@
+# Presentation/operator aids only. Never changes occupancy or fusion acceptance.
+live_point_m: 0.008
+stale_point_m: 0.007
+floor_point_m: 0.003
+floor_height_m: 0.12
+floor_brightness: 0.30
+point_shape: circle
+change_markers: false
+enlarged_labels: false
+marker_period_s: 0.8
+novel_distance_m: 0.04
+novel_min_voxels: 5
+novel_confirmations: 2
+novel_fraction: 0.35
+show_camera_frustums: false
+show_stale: false
+show_floor: false
+marker_label_scale: 1.15
+marker_margin_m: 0.008
+crisp_live:
+  enabled: false
+  window_s: 0.75
+  pixel_stride: 4
+  points_per_frame: 1024
+  frames_per_camera: 4
+  point_budget: 4000
+  point_size_m: 0.0025
+  update_hz: 4

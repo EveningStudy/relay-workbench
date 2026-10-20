@@ -1,0 +1,76 @@
+seed: 7
+low_latency: true
+render_shader: minimal
+odometry: sim_gt_plus_noise
+odom_noise_m: 0.0005
+cameras:
+  head_left:
+    frame: head_cam_left
+    model: pinhole
+    width: 640
+    height: 400
+    horizontal_fov_deg: 120
+    hz: 30
+    depth_mode: sgbm
+    delay_ms: 8
+    jitter_ms: 2
+    exposure_jitter_ms: 2
+    drop_probability: 0.0
+    timestamp_bias_ms: 0
+    outages: []
+  head_right:
+    frame: head_cam_right
+    model: pinhole
+    width: 640
+    height: 400
+    horizontal_fov_deg: 120
+    hz: 30
+    depth_mode: none
+    delay_ms: 8
+    jitter_ms: 2
+    exposure_jitter_ms: 2
+    drop_probability: 0.0
+    timestamp_bias_ms: 0
+    outages: []
+  wrist_left:
+    frame: wrist_cam_l
+    model: kb4
+    width: 512
+    height: 512
+    circular_fov_deg: 180
+    kb4:
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    cube_size: 256
+    hz: 20
+    depth_mode: sim_ideal
+    delay_ms: 12
+    jitter_ms: 3
+    exposure_jitter_ms: 0
+    drop_probability: 0.0
+    timestamp_bias_ms: 0
+    outages: []
+    noise_sigma_z2: 0.003
+  wrist_right:
+    frame: wrist_cam_r
+    model: kb4
+    width: 512
+    height: 512
+    circular_fov_deg: 180
+    kb4:
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    cube_size: 256
+    hz: 15
+    depth_mode: sim_ideal
+    delay_ms: 12
+    jitter_ms: 3
+    exposure_jitter_ms: 0
+    drop_probability: 0.0
+    timestamp_bias_ms: 0
+    outages: []
+    noise_sigma_z2: 0.003

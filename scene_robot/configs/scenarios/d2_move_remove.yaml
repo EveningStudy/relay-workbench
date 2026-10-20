@@ -1,0 +1,12 @@
+name: d2_move_remove
+duration: 50
+events:
+  - {at: 8, action: move, actor: box, translation: [0.30, 0, 0]}
+  - {at: 28, action: move, actor: mug, translation: [0, 0, -3]}
+trajectory:
+  joints: {lift: 0.42, head_tilt: 0.35}
+viewing_phases:
+  - {at: 8, trajectory: {velocity: [0.08, 0, 0]}}
+  - {at: 22, trajectory: {velocity: [0, 0, 0]}}
+  - {at: 30, trajectory: {velocity: [-0.08, 0, 0]}}
+  - {at: 44, trajectory: {velocity: [0, 0, 0]}}

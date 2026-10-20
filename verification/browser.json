@@ -1,0 +1,22 @@
+{
+  "title": "Relay \u00b7 Scene and robot",
+  "url": "http://127.0.0.1:8090/",
+  "viewport": "1440x1000",
+  "browser": "Chrome via Playwright",
+  "routing": "Browser plugin not available",
+  "page_identity": true,
+  "not_blank": true,
+  "framework_overlay": false,
+  "interaction": "Canvas focus -> right-arm key -> RIGHT ARM SELECTED; STOP remains responsive",
+  "interaction_passed": true,
+  "errors": [
+    "THREE.BufferGeometry.computeBoundingSphere(): Computed radius is NaN. The \"position\" attribute is likely to have NaN values. Ts"
+  ],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+  ],
+  "screenshot": "docs/media/operator.png",
+  "procedural_orbit_gif_frames": 16,
+  "known_renderer_diagnostic": "Viser/Three.js instanced Gaussian quad has 2D positions; bounding-sphere diagnostic, zero nonfinite position values. Scene still renders."
+}

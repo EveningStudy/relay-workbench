@@ -1,0 +1,14 @@
+name: Relay V9a DSP B normalized
+sample_rate: 24000
+f0_hz: 160
+vocoder_mix: 1.0
+dry_above_hz: 8800
+metal_delay_ms: 2.0
+metal_mix: 0.10
+output_gain: 1.2
+target_envelope: results/v9a/target_envelope.npy
+ltas_strength: 0.65
+warp_strength: 0.5
+dry_eq_strength: 0.65
+gate_floor: 0.0007
+click_threshold: 0.035

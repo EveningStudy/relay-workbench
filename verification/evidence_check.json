@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "files": 23,
+  "scope": "All numerical/null/boolean JSON leaves and retained voice table bytes match original source. Private paths/branding inside scene receipts were redacted."
+}

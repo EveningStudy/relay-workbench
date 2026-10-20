@@ -1,0 +1,7 @@
+segment,from_s,to_s,blocks,median_ms,p95_ms,max_ms,evidence
+1,0,600,120000,46.479166666442325,48.562499999290594,51.66666666681704,measured driver timestamps + 42 ms declared algorithmic allowance
+2,600,1200,120000,48.08333333320843,48.6041666664205,48.6666666666606,measured driver timestamps + 42 ms declared algorithmic allowance
+3,1200,1800,120000,48.08333333320843,48.6041666664205,48.6666666666606,measured driver timestamps + 42 ms declared algorithmic allowance
+4,1800,2400,120000,48.08333333366318,48.604166666875244,48.66666666711535,measured driver timestamps + 42 ms declared algorithmic allowance
+5,2400,3000,120000,48.08333333366318,48.604166666875244,48.66666666711535,measured driver timestamps + 42 ms declared algorithmic allowance
+6,3000,3600,119985,48.08333333366318,48.604166666875244,48.66666666711535,measured driver timestamps + 42 ms declared algorithmic allowance

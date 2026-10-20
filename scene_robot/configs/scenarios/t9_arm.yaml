@@ -1,0 +1,4 @@
+name: t9_arm
+duration: 22
+events: []
+trajectory: {joints: {left_shoulder_pitch: {center: -0.6, amplitude: 0.5, omega: 0.4}, left_elbow: {center: -0.8, amplitude: 0.4, omega: 0.5}}}

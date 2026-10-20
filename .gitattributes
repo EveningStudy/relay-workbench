@@ -1,0 +1,15 @@
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.svg text eol=lf
+*.ps1 text eol=crlf
+*.stl binary
+*.gif binary
+*.png binary
+*.wav binary
+*.npy binary
+results/voice/*.csv -text
+# Preserve upstream source formatting rather than rewriting their whitespace.
+voice/third_party/** whitespace=-trailing-space,blank-at-eof

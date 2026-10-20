@@ -1,0 +1,6 @@
+name: d4_occlusion
+duration: 22
+events:
+  - {at: 8, action: move, actor: new_mug, translation: [0.10, -0.315, 0]}
+trajectory:
+  joints: {head_pan: 1.2, right_shoulder_pitch: -1.2, right_elbow: -1.0}

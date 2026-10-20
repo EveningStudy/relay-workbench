@@ -1,0 +1,10 @@
+[project]
+name = "relay-workbench"
+version = "0.1.0"
+description = "Local robot-character audio and asynchronous robot scene fusion"
+requires-python = ">=3.11,<3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["voice/tests", "scene_robot/tests"]
+pythonpath = ["voice/src", "voice", "voice/scripts", "scene_robot"]
+addopts = "--import-mode=importlib"

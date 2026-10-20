@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="Audio and camera pipelines">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64cabc"/></marker></defs>
+<rect width="1200" height="560" rx="20" fill="#111c25"/>
+<g font-family="Segoe UI,Arial,sans-serif" fill="#eef5f7">
+<text x="48" y="58" font-size="30" font-weight="600">Relay Workbench</text><text x="48" y="90" font-size="17" fill="#a8bdc7">Small audio blocks. Independent camera clocks. Explicit evidence states.</text>
+<text x="48" y="152" font-size="14" fill="#64cabc" letter-spacing="2">VOICE / CPU / LOCAL</text>
+<g fill="#1c303e" stroke="#355361"><rect x="48" y="177" width="214" height="100" rx="10"/><rect x="342" y="177" width="234" height="100" rx="10"/><rect x="656" y="177" width="214" height="100" rx="10"/><rect x="950" y="177" width="202" height="100" rx="10"/></g>
+<g font-size="20"><text x="69" y="215">Microphone</text><text x="363" y="215">Causal character</text><text x="677" y="215">Noise gate</text><text x="971" y="215">Headphones</text></g>
+<g font-size="15" fill="#a8bdc7"><text x="69" y="245">240 samples / 48 kHz</text><text x="363" y="245">Stateful DSP transform</text><text x="677" y="245">Bounded state</text><text x="971" y="245">Same audio clock</text></g>
+<g stroke="#64cabc" stroke-width="2" marker-end="url(#arrow)"><path d="M266 227H332"/><path d="M580 227H646"/><path d="M874 227H940"/></g>
+<text x="48" y="333" font-size="14" fill="#eab77c" letter-spacing="2">ROBOT / SIMULATION / ASYNCHRONOUS CAMERAS</text>
+<g fill="#1c303e" stroke="#355361"><rect x="48" y="357" width="214" height="110" rx="10"/><rect x="342" y="357" width="234" height="110" rx="10"/><rect x="656" y="357" width="214" height="110" rx="10"/><rect x="950" y="357" width="202" height="110" rx="10"/></g>
+<g font-size="20"><text x="69" y="395">Camera + state</text><text x="363" y="395">Exposure-time pose</text><text x="677" y="395">Evidence fusion</text><text x="971" y="395">Operator view</text></g>
+<g font-size="15" fill="#a8bdc7"><text x="69" y="425">Stereo head / wrist KB4</text><text x="363" y="425">Capture != delivery time</text><text x="677" y="425">Fixed Gaussian prior</text><text x="971" y="425">Live / stale / unknown</text><text x="69" y="448">Joints + noisy odometry</text><text x="363" y="448">Observed joint transforms</text><text x="677" y="448">Depth + free-space rays</text><text x="971" y="448">Local browser UI</text></g>
+<g stroke="#64cabc" stroke-width="2" marker-end="url(#arrow)"><path d="M266 412H332"/><path d="M580 412H646"/><path d="M874 412H940"/></g>
+<text x="48" y="518" fill="#a8bdc7" font-size="15">Synthetic public examples. Original measurements and limitations are reported separately.</text>
+</g></svg>

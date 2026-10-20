@@ -1,0 +1,97 @@
+{
+  "voice": "Kokoro-82M af_heart",
+  "origin": "synthetic TTS and character-processed adaptations",
+  "clips": [
+    {
+      "file": "raw_02.wav",
+      "text": "Please call Stella.",
+      "decoded_samples_sha256": "f83982fde3e011cd83b9c6f3688b49a353661eb56ccf5afa455ec0ab035f920c"
+    },
+    {
+      "file": "character_02.wav",
+      "text": "Please call Stella.",
+      "decoded_samples_sha256": "8b0b07b3472c16fa58cc0c5b741c37f7cfd314aa6718b4ee9752ee120f7645cc"
+    },
+    {
+      "file": "raw_03.wav",
+      "text": "Ask her to bring these things with her from the store.",
+      "decoded_samples_sha256": "1c21487eec76e362ed731c3376d3d60a9fcce3203b68675229c40115dcfd7ba3"
+    },
+    {
+      "file": "character_03.wav",
+      "text": "Ask her to bring these things with her from the store.",
+      "decoded_samples_sha256": "e5d6abcde2c2f388cc30311a20a2e8ef92ab8ed2b6e48f590deb91194a72c0d4"
+    },
+    {
+      "file": "raw_04.wav",
+      "text": "Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.",
+      "decoded_samples_sha256": "436fa83c00fcda7ebb3f9cd1cb7d22d7ba339e91988ce3fc0a74cdcadd708f70"
+    },
+    {
+      "file": "character_04.wav",
+      "text": "Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.",
+      "decoded_samples_sha256": "23fbce612021cc8330f2a22636a7c9ca830a72c84c0d893eb24b82874adc5cc2"
+    },
+    {
+      "file": "raw_05.wav",
+      "text": "We also need a small plastic snake and a big toy frog for the kids.",
+      "decoded_samples_sha256": "3adc6f746d54eb47823e3ea678ab60b18c3ed3fb70bfc46db112a907ccb53a9d"
+    },
+    {
+      "file": "character_05.wav",
+      "text": "We also need a small plastic snake and a big toy frog for the kids.",
+      "decoded_samples_sha256": "79e7826105507a9e63b86a0a5fe94531aa5bab30b1e003a56b7d55c09942754a"
+    },
+    {
+      "file": "raw_06.wav",
+      "text": "She can scoop these things into three red bags, and we will go meet her Wednesday at the train station.",
+      "decoded_samples_sha256": "b62b3d920951467277adac6250a2008fea6b5d14c18c114941bb2c275d4f4d0f"
+    },
+    {
+      "file": "character_06.wav",
+      "text": "She can scoop these things into three red bags, and we will go meet her Wednesday at the train station.",
+      "decoded_samples_sha256": "e28a890f479e6b73447828275b92056e369a405fc31112c0fec6047852d4e3a6"
+    },
+    {
+      "file": "raw_07.wav",
+      "text": "I will wait here while you check the instructions.",
+      "decoded_samples_sha256": "fb1008a7106654c1359c2cc7214a6be06c98551dbea281f270a0a39a80e5f3eb"
+    },
+    {
+      "file": "character_07.wav",
+      "text": "I will wait here while you check the instructions.",
+      "decoded_samples_sha256": "0900b49de96b0e207291e44189a8f75c75adcde9a9257349dee61199f7dcccd0"
+    },
+    {
+      "file": "raw_08.wav",
+      "text": "Could you say that again, please?",
+      "decoded_samples_sha256": "9fcca2ed4c5b8e08c979c6a38442e87cda84debbc481de934db5cfdbe84214d0"
+    },
+    {
+      "file": "character_08.wav",
+      "text": "Could you say that again, please?",
+      "decoded_samples_sha256": "21fe2dc2fdd04673184a9b67e69d23229d80146803ed6ebdce394e8b975a2b39"
+    },
+    {
+      "file": "raw_09.wav",
+      "text": "The room is quiet, and the microphone is ready.",
+      "decoded_samples_sha256": "fff9c191e24be5a8b361f1bde8a833f5bbfbf24fd585cf77b09305e99ea043e6"
+    },
+    {
+      "file": "character_09.wav",
+      "text": "The room is quiet, and the microphone is ready.",
+      "decoded_samples_sha256": "06eab30795814571911db84faf62ef096ae1ac730b8630f26c4fe68af5f79505"
+    },
+    {
+      "file": "raw_10.wav",
+      "text": "Thank you. The task is complete.",
+      "decoded_samples_sha256": "22391f9371ca505b13a94a1b73c653bcad60d09ed62fb373be77edd071283985"
+    },
+    {
+      "file": "character_10.wav",
+      "text": "Thank you. The task is complete.",
+      "decoded_samples_sha256": "e9f346e572b0e99b8d0ff68d45f990925a195154ffc1b32fe6b16250929c82c1"
+    }
+  ],
+  "embedding_scope": "Computed from original ten-clip set. One clip is withheld because it contains a placeholder name. Embedding retained unchanged, not regenerated."
+}

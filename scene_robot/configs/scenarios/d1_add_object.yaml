@@ -1,0 +1,9 @@
+name: d1_add_object
+duration: 28
+events:
+  - {at: 8, action: move, actor: new_mug, translation: [0.30, -0.315, 0]}
+trajectory:
+  joints: {lift: 0.42, head_tilt: 0.35}
+viewing_phases:
+  - {at: 12, trajectory: {velocity: [0.035, 0, 0]}}
+  - {at: 22, trajectory: {velocity: [0, 0, 0]}}

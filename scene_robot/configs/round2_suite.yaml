@@ -1,0 +1,18 @@
+live_scenarios: [d1_add_object, d2_move_remove, d3_chair, t8_lateral]
+base_scenario: t8_lateral
+conditions:
+  baseline: {}
+  baseline_repeat: {}
+  delay_50: {delay_ms: 50}
+  delay_100: {delay_ms: 100}
+  bias_50: {timestamp_bias_ms: 50}
+  bias_100: {timestamp_bias_ms: 100}
+  stereo_50: {stereo_offset_ms: 50}
+  stereo_100: {stereo_offset_ms: 100}
+  loss_10: {loss: 0.10}
+  loss_30: {loss: 0.30}
+  outage_2s: {outage: [8, 10]}
+  arrival_pose: {}
+  head_sgbm: {head_gt_subset: true, head_depth: sgbm}
+  head_ideal: {head_gt_subset: true, head_depth: sim_ideal}
+  wrists_none: {wrist_depth: none}

@@ -1,0 +1,12 @@
+# M20 display restored from 6c3374c under Chris's fallback authorization.
+# Values document its fixed rendering defaults; it does not load E2/E3 styles.
+display_backend: m20_points
+live_point_m: 0.018
+stale_point_m: 0.014
+show_stale: true
+show_floor: true
+change_markers: false
+show_camera_frustums: false
+enlarged_labels: false
+crisp_live:
+  enabled: false

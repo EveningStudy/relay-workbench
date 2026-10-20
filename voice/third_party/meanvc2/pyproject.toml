@@ -1,0 +1,25 @@
+[project]
+name = "relay-meanvc2-feasibility"
+version = "0.1.0"
+requires-python = "==3.11.*"
+dependencies = [
+  "torch==2.8.0+cu128", "torchaudio==2.8.0+cu128",
+  "numpy==2.2.6", "scipy==1.16.2", "soundfile==0.13.1",
+  "s3prl==0.4.18", "x-transformers==2.2.11", "einops==0.8.1",
+  "safetensors==0.6.2", "transformers==4.55.4", "psutil==7.1.0",
+  "gdown==5.2.0"
+]
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchaudio = { index = "pytorch-cu128" }
+
+[tool.uv.workspace]

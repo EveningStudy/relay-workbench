@@ -1,0 +1,227 @@
+{
+  "load": {
+    "gpu_util_before": 1.0,
+    "gpu_util_samples_before": [
+      1,
+      1,
+      2,
+      1
+    ],
+    "gpu_pids_before": [
+      2472,
+      13388,
+      13960,
+      17064,
+      17088,
+      18696,
+      17708,
+      20712,
+      21376,
+      20072,
+      15000,
+      29824,
+      31768,
+      27192,
+      6012,
+      18292,
+      10364,
+      25244,
+      9256,
+      31292,
+      29360,
+      18380,
+      24328,
+      37612,
+      13460,
+      40292,
+      39708,
+      43224,
+      46612,
+      35908,
+      35860
+    ],
+    "external_compute_pids": [],
+    "contended": false,
+    "policy": "Shared desktop GPU; contended if external Python/training compute present or pre-run utilization >10%. Windows NVML lists graphics PIDs too. No claim of exclusive GPU access."
+  },
+  "steady_state_ns": [
+    1792348750280631100,
+    1792348770864921900
+  ],
+  "stages_ms": {
+    "exposure_render": {
+      "n": 459,
+      "median": 0.4286,
+      "p95": 2.536539999999999,
+      "max": 4.9662
+    },
+    "render_encode": {
+      "n": 459,
+      "median": 50.4535,
+      "p95": 52.10260999999999,
+      "max": 53.4393
+    },
+    "encode_send": {
+      "n": 459,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    },
+    "send_receive": {
+      "n": 459,
+      "median": 1.5107,
+      "p95": 18.25085999999999,
+      "max": 44.3397
+    },
+    "queue_wait": {
+      "n": 459,
+      "median": 3.0856,
+      "p95": 23.970299999999995,
+      "max": 53.4748
+    },
+    "integration": {
+      "n": 459,
+      "median": 6.5098,
+      "p95": 23.208789999999993,
+      "max": 31.6184
+    },
+    "integration_flush": {
+      "n": 459,
+      "median": 16.467,
+      "p95": 40.670039999999986,
+      "max": 84.0563
+    },
+    "flush_dom": {
+      "n": 459,
+      "median": 20.456,
+      "p95": 51.130799999999994,
+      "max": 62.6875
+    },
+    "capture_dom": {
+      "n": 459,
+      "median": 88.5715,
+      "p95": 156.22325999999998,
+      "max": 198.1645
+    }
+  },
+  "true_capture_dom_ms": {
+    "n": 459,
+    "median": 109.649359,
+    "p95": 159.96382169999998,
+    "max": 198.164459
+  },
+  "browser_raf_hz": 206.22522491763473,
+  "drawn_view_fps": 206.22522491763473,
+  "geometry_flush_hz": 26.816566349713636,
+  "fresh_geometry_flush_hz": 15.885900718036881,
+  "unique_integrations_displayed_hz": 22.29855788862058,
+  "command_dom_motion_ms": null,
+  "per_camera_age_ms": {
+    "head_left": {
+      "n": 552,
+      "median": 170.5790535,
+      "p95": 276.10726659999995,
+      "max": 347.62411
+    },
+    "wrist_right": {
+      "n": 552,
+      "median": 159.93815899999998,
+      "p95": 234.66546899999975,
+      "max": 360.027459
+    },
+    "wrist_left": {
+      "n": 552,
+      "median": 73.097509,
+      "p95": 193.57931899999986,
+      "max": 240.946459
+    },
+    "head_right": {
+      "n": 552,
+      "median": 173.6270895,
+      "p95": 280.22196134999996,
+      "max": 329.964341
+    }
+  },
+  "scope": "No screenshots. DOM marker in geometry atomic batch, explicit server flush; not physical display presentation. render_encode includes configured delivery wait and scheduling. Browser draw-call rAF counts actual drawn frames, not distinct geometry updates.",
+  "per_camera_geometry_dom_ms": {
+    "head_left": {
+      "n": 88,
+      "median": 116.4887855,
+      "p95": 164.5076437,
+      "max": 190.83494
+    },
+    "wrist_left": {
+      "n": 206,
+      "median": 107.132209,
+      "p95": 152.592934,
+      "max": 174.719359
+    },
+    "wrist_right": {
+      "n": 165,
+      "median": 108.194359,
+      "p95": 161.596259,
+      "max": 198.164459
+    }
+  },
+  "per_camera_feed_dom_upper_ms": {
+    "head_left": {
+      "n": 133,
+      "median": 114.44,
+      "p95": 163.58324,
+      "max": 256.624
+    },
+    "head_right": {
+      "n": 128,
+      "median": 115.049,
+      "p95": 168.08271499999998,
+      "max": 256.8776
+    },
+    "wrist_left": {
+      "n": 128,
+      "median": 14.14475,
+      "p95": 59.64613499999996,
+      "max": 147.7666
+    },
+    "wrist_right": {
+      "n": 157,
+      "median": 109.1066,
+      "p95": 162.0897,
+      "max": 198.1645
+    }
+  },
+  "crisp_live": {
+    "select_upload_ms": {
+      "n": 0,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "points": {
+      "n": 0,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "upload_hz": 0.0,
+    "refresh_hz": 0.0,
+    "first_pixel_batch_dom_ms": {
+      "n": 0,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "display_work_ms": {
+      "n": 552,
+      "median": 5.5079,
+      "p95": 24.45965499999999,
+      "max": 31.4655
+    },
+    "step_work_ms": {
+      "n": 552,
+      "median": 6.123749999999999,
+      "p95": 26.269759999999977,
+      "max": 50.3383
+    },
+    "scope": "Distinct contributing camera/sequence first observed in a LIVE-gated pixel layer at DOM, including evidence wait. Not physical presentation; distinct from accepted map-batch capture_dom."
+  }
+}

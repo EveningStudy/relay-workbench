@@ -1,0 +1,202 @@
+{
+  "d1_add_object": {
+    "folder": "data\\experiments\\m22_final\\d1_add_object",
+    "changes": [
+      {
+        "actor": "new_mug",
+        "action": "move",
+        "scheduled_s": 8,
+        "first_visible_ns": 1792282784394406744,
+        "adequate_ns": 1792282784568963400,
+        "live_ns": 1792282785998000000,
+        "suppressed_ns": null,
+        "observations": 274,
+        "last_visible_ns": 1792282804220227830,
+        "visible_surface_sample_fraction": 0.8933333333333333,
+        "present_surface_voxels": 23,
+        "strict_live_surface_fraction": 0.3333333333333333,
+        "presence_ns": 1792282785998000000,
+        "live_after_visible_ms": 1603.593256,
+        "suppressed_after_visible_ms": null,
+        "suppression_after_adequate_ms": null,
+        "presence_after_visible_ms": 1603.593256,
+        "status": "response observed"
+      }
+    ],
+    "capture_provenance": {
+      "code_hash": "6e97d42fe32d1f78878bf82c3bdfbe16fcbb7548281823b8b2f1130b598f778b",
+      "config_hash": "bc8db75208c4f1a74cc565996d64d846e889d15e61cfba4a506f243c6dc94ea2",
+      "command": [
+        "[private source path removed]",
+        "--run-id",
+        "m22_final",
+        "--gate-name",
+        "m22_final_gate",
+        "--no-report",
+        "--require-idle"
+      ],
+      "t_start_ns": 1792282768199137300
+    }
+  },
+  "d2_move_remove": {
+    "folder": "data\\experiments\\m22_final\\d2_move_remove",
+    "changes": [
+      {
+        "actor": "box",
+        "action": "move",
+        "scheduled_s": 8,
+        "first_visible_ns": 1792282857747131900,
+        "adequate_ns": 1792282857835554454,
+        "live_ns": 1792282871111000000,
+        "suppressed_ns": 1792282863124000000,
+        "observations": 565,
+        "last_visible_ns": 1792282899618148381,
+        "obsolete_free_observation_fraction": 0.9913164293157346,
+        "visible_surface_sample_fraction": 0.7033333333333334,
+        "present_surface_voxels": 83,
+        "obsolete_scan_samples": 2879,
+        "strict_live_surface_fraction": 0.25,
+        "presence_ns": 1792282858194000000,
+        "live_after_visible_ms": 13363.8681,
+        "suppressed_after_visible_ms": 5376.8681,
+        "suppression_after_adequate_ms": 5288.445546,
+        "presence_after_visible_ms": 446.8681,
+        "status": "response observed"
+      },
+      {
+        "actor": "mug",
+        "action": "move",
+        "scheduled_s": 28,
+        "first_visible_ns": 1792282877747697500,
+        "adequate_ns": 1792282877854806332,
+        "live_ns": null,
+        "suppressed_ns": 1792282877778000000,
+        "observations": 283,
+        "last_visible_ns": 1792282899618148381,
+        "obsolete_free_observation_fraction": 0.9904596704249783,
+        "visible_surface_sample_fraction": 0.0,
+        "present_surface_voxels": 0,
+        "obsolete_scan_samples": 1153,
+        "live_after_visible_ms": null,
+        "suppressed_after_visible_ms": 30.3025,
+        "suppression_after_adequate_ms": -76.806332,
+        "presence_after_visible_ms": null,
+        "status": "response observed"
+      }
+    ],
+    "capture_provenance": {
+      "code_hash": "6e97d42fe32d1f78878bf82c3bdfbe16fcbb7548281823b8b2f1130b598f778b",
+      "config_hash": "bc8db75208c4f1a74cc565996d64d846e889d15e61cfba4a506f243c6dc94ea2",
+      "command": [
+        "[private source path removed]",
+        "--run-id",
+        "m22_final",
+        "--gate-name",
+        "m22_final_gate",
+        "--no-report",
+        "--require-idle"
+      ],
+      "t_start_ns": 1792282841875836600
+    }
+  },
+  "d3_chair": {
+    "folder": "data\\experiments\\m22_final\\d3_chair",
+    "changes": [
+      {
+        "actor": "chair",
+        "action": "path",
+        "scheduled_s": 5,
+        "first_visible_ns": 1792282953028049800,
+        "adequate_ns": 1792282956027610400,
+        "live_ns": 1792282968901000000,
+        "suppressed_ns": null,
+        "observations": 247,
+        "last_visible_ns": 1792282975626460280,
+        "visible_surface_sample_fraction": 0.526361279170268,
+        "present_surface_voxels": 91,
+        "strict_live_surface_fraction": 0.25237683664649957,
+        "obsolete_scan_samples": 0,
+        "presence_ns": 1792282961794000000,
+        "live_after_visible_ms": 15872.9502,
+        "suppressed_after_visible_ms": null,
+        "suppression_after_adequate_ms": null,
+        "presence_after_visible_ms": 8765.9502,
+        "status": "response observed"
+      }
+    ],
+    "capture_provenance": {
+      "code_hash": "6e97d42fe32d1f78878bf82c3bdfbe16fcbb7548281823b8b2f1130b598f778b",
+      "config_hash": "bc8db75208c4f1a74cc565996d64d846e889d15e61cfba4a506f243c6dc94ea2",
+      "command": [
+        "[private source path removed]",
+        "--run-id",
+        "m22_final",
+        "--gate-name",
+        "m22_final_gate",
+        "--no-report",
+        "--require-idle"
+      ],
+      "t_start_ns": 1792282939839282400
+    }
+  },
+  "residuals": {
+    "box": {
+      "prior": {
+        "obsolete_samples": 25,
+        "above_support_margin": 0,
+        "bounds": [
+          [
+            1.1774673461914062,
+            0.9119539260864258,
+            0.8750940561294556
+          ],
+          [
+            1.4786555767059326,
+            1.1345430612564087,
+            0.8797659277915955
+          ]
+        ]
+      },
+      "live": {
+        "obsolete_samples": 0,
+        "above_support_margin": 0,
+        "bounds": null
+      }
+    },
+    "mug": {
+      "prior": {
+        "obsolete_samples": 11,
+        "above_support_margin": 0,
+        "bounds": [
+          [
+            0.41886237263679504,
+            0.6030428409576416,
+            0.876327633857727
+          ],
+          [
+            0.5615600347518921,
+            0.6996469497680664,
+            0.8798741102218628
+          ]
+        ]
+      },
+      "live": {
+        "obsolete_samples": 0,
+        "above_support_margin": 0,
+        "bounds": null
+      }
+    }
+  },
+  "criteria": {
+    "added_mug_live": true,
+    "moved_box_live": true,
+    "old_box_suppressed": true,
+    "removed_mug_suppressed": true,
+    "chair_live": true,
+    "no_obsolete_above_plane_prior": true,
+    "no_obsolete_above_plane_live": true
+  },
+  "automatic_gate": true,
+  "evaluation_code_hash": "6e97d42fe32d1f78878bf82c3bdfbe16fcbb7548281823b8b2f1130b598f778b",
+  "evaluation_config_hash": "bc8db75208c4f1a74cc565996d64d846e889d15e61cfba4a506f243c6dc94ea2"
+}

@@ -1,0 +1,33 @@
+cluster_free_fraction: 0.8
+device: cpu
+display_hz: 30
+free_logodds: -0.55
+free_margin_m: 0.015
+geometry_cameras:
+- head_left
+- wrist_left
+- wrist_right
+hit_logodds: 0.85
+live_min_hits: 3
+live_min_neighbors: 2
+live_seconds: 2
+low_latency: true
+max_age_ms: 500
+max_range_m: 3.5
+pixel_stride: 4
+pose_time: capture
+prior_cluster_mask: true
+ray_step_m: 0.01
+removed_threshold: -2.0
+resolution_m: 0.02
+sample_repeat: 1
+support_margin_m: 0.025
+timestamp_uncertainty_ms: 2
+workspace_max:
+- 3.75
+- 1.75
+- 1.8
+workspace_min:
+- -0.6
+- -0.8
+- 0.0

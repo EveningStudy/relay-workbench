@@ -1,0 +1,33 @@
+duration: 28
+events:
+- action: path
+  actor: chair
+  at: 5
+  duration: 8
+  from:
+  - 0
+  - 0
+  - 0
+  to:
+  - -0.55
+  - 0.95
+  - 0
+name: d3_chair
+trajectory:
+  joints:
+    head_tilt: 0.95
+    lift: 0.3
+    right_wrist_pitch: 0.7
+viewing_phases:
+- at: 5
+  trajectory:
+    velocity:
+    - 0.045
+    - 0
+    - 0
+- at: 13
+  trajectory:
+    velocity:
+    - 0
+    - 0
+    - 0

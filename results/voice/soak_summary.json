@@ -1,0 +1,101 @@
+{
+  "evidence": "measured driver DAC-ADC timestamps + declared algorithmic delay; NOT physical E2E",
+  "log": "results/soak_v8_v9c_run2.jsonl",
+  "log_sha256": "05d658796b997cd85db7aacbf7452105a77d738fc512d36befc381fb171484f3",
+  "build": "v9c",
+  "frozen_commit": "14ff678b68f9a0575b32e3c2aad8a31c8ebe24c0",
+  "stop_elapsed_seconds": 3600.0930000000003,
+  "blocks": 719985,
+  "block_ms": 5,
+  "audio_block_seconds": 3599.925,
+  "algorithmic_delay_ms": 42,
+  "median_ms": 48.02083333342307,
+  "p95_ms": 48.604166666875244,
+  "max_ms": 51.66666666681704,
+  "processing_p99_ms": 0.7600999997521285,
+  "processing_max_ms": 1.8043000000034226,
+  "callback_p99_ms": 0.7949999999254942,
+  "overrun": 0,
+  "input_overflow": 0,
+  "output_underflow": 0,
+  "safe_mode": 0,
+  "emergency": 0,
+  "variable_frames": 0,
+  "telemetry_lost": 0,
+  "stream_opens": 1,
+  "devices": [
+    24,
+    20
+  ],
+  "exclusive": true,
+  "input_above_003_fraction": 0.0053098328437398,
+  "output_above_0005_fraction": 0.01654340020972659,
+  "segments": [
+    {
+      "segment": 1,
+      "from_s": 0,
+      "to_s": 600,
+      "blocks": 120000,
+      "median_ms": 46.479166666442325,
+      "p95_ms": 48.562499999290594,
+      "max_ms": 51.66666666681704,
+      "evidence": "measured driver timestamps + 42 ms declared algorithmic allowance"
+    },
+    {
+      "segment": 2,
+      "from_s": 600,
+      "to_s": 1200,
+      "blocks": 120000,
+      "median_ms": 48.08333333320843,
+      "p95_ms": 48.6041666664205,
+      "max_ms": 48.6666666666606,
+      "evidence": "measured driver timestamps + 42 ms declared algorithmic allowance"
+    },
+    {
+      "segment": 3,
+      "from_s": 1200,
+      "to_s": 1800,
+      "blocks": 120000,
+      "median_ms": 48.08333333320843,
+      "p95_ms": 48.6041666664205,
+      "max_ms": 48.6666666666606,
+      "evidence": "measured driver timestamps + 42 ms declared algorithmic allowance"
+    },
+    {
+      "segment": 4,
+      "from_s": 1800,
+      "to_s": 2400,
+      "blocks": 120000,
+      "median_ms": 48.08333333366318,
+      "p95_ms": 48.604166666875244,
+      "max_ms": 48.66666666711535,
+      "evidence": "measured driver timestamps + 42 ms declared algorithmic allowance"
+    },
+    {
+      "segment": 5,
+      "from_s": 2400,
+      "to_s": 3000,
+      "blocks": 120000,
+      "median_ms": 48.08333333366318,
+      "p95_ms": 48.604166666875244,
+      "max_ms": 48.66666666711535,
+      "evidence": "measured driver timestamps + 42 ms declared algorithmic allowance"
+    },
+    {
+      "segment": 6,
+      "from_s": 3000,
+      "to_s": 3600,
+      "blocks": 119985,
+      "median_ms": 48.08333333366318,
+      "p95_ms": 48.604166666875244,
+      "max_ms": 48.66666666711535,
+      "evidence": "measured driver timestamps + 42 ms declared algorithmic allowance"
+    }
+  ],
+  "segment_basis": "sequence * 5 ms, six non-overlapping 600 s bins",
+  "flat_definition": "No accumulating delay: inspect the six segment distributions, not literal equality of every timestamp.",
+  "physical_e2e_measured": false,
+  "excluded_log": "results/soak_v8_v9c.jsonl",
+  "excluded_reason": "Wrong input/output devices; retained unchanged",
+  "passed": true
+}
