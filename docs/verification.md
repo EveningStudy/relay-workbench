@@ -69,6 +69,11 @@ transcription is claimed.
 
 The original source is read-only. Its separate before/after inventory covers
 51,680 file hashes and the source HEAD. No historical result value was changed.
+The latest comparison found all file hashes unchanged, but the source HEAD now
+differs from the initial inventory: `ffff7c0f` versus `727ffe38`. Their Git trees
+are identical. The source reflog records a reset to `fix-author`; an unchanged
+source-history claim cannot be certified from that inventory. No corrective
+write or reset was performed on the source during this refresh.
 
 ## What this does not verify
 

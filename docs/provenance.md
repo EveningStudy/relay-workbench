@@ -4,6 +4,12 @@ Historical results were measured on the original build. This repository is a
 renamed, curated copy with a new Git history. The private source revision was
 `727ffe38e9810d063be105439ff115c548b9584e`.
 
+The later kitchen-refresh audit found the source at
+`ffff7c0f6ce7c181ff1142ea584e23ca89263e0f`. Its tree is identical to the recorded
+revision and all 51,680 inventoried file hashes still match, but its HEAD does
+not match the initial inventory. The reflog records a reset to `fix-author`.
+This discrepancy is retained; the source was not reset or rewritten to repair it.
+
 Package names, import prefixes, robot names, URDF paths, UI strings and metadata
 were changed. Old freeze receipts no longer certify the source in this copy.
 No original freeze manifest is used as a passing gate here. Lightweight tests and
