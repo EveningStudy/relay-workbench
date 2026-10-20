@@ -1,21 +1,48 @@
-label: Procedural public desk; not the historical real scan
+label: Kitchen island scan with measured fitted primitives
 old_map: assets/scan/old_map.ply
 desk:
-  width_x: 2.0
-  depth_y: 0.8
-  height_z: 0.8
-  top_thickness: 0.05
-  solid_block: false
-workspace_min: [-0.6, -1.8, 0.0]
-workspace_max: [3.0, 1.8, 2.0]
-gaussian_count: 12000
+  width_x: 3.35
+  depth_y: 1.35
+  height_z: 0.9
+  top_thickness: 0.0
+  leg_or_panel_notes: solid stone block down to the floor, no legs; collision = one
+    box 3.35 x 1.35 x 0.90
+  solid_block: true
+workspace_min:
+- -0.6
+- -0.8
+- 0.0
+workspace_max:
+- 3.75
+- 1.75
+- 1.8
+gaussian_count: 216953
 objects:
   box:
-    size: [0.25, 0.18, 0.12]
-    position: [1.2, 0.5, 0.86]
+    size:
+    - 0.29
+    - 0.2
+    - 0.105
+    position:
+    - 1.31
+    - 1.025
+    - 0.9525
     yaw_deg: 0
-    color: [0.4, 0.26, 0.15]
+    color:
+    - 0.4
+    - 0.26
+    - 0.15
   mug:
-    size: [0.08, 0.08, 0.1]
-    position: [0.5, 0.4, 0.85]
-    color: [0.8, 0.8, 0.8]
+    size:
+    - 0.08
+    - 0.08
+    - 0.087
+    position:
+    - 0.5
+    - 0.665
+    - 0.9435
+    yaw_deg: 180
+    color:
+    - 0.8
+    - 0.8
+    - 0.8

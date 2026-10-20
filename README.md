@@ -7,13 +7,14 @@ arrive in small blocks, at different rates, or late.
 
 ## Demos
 
-### Robot and scene / 24-second loop
+### Kitchen scan and robot / 24-second loop
 
-![Procedural robot tour with scripted base, lift, head and arm motion](docs/media/scene.gif)
+![Kitchen scan, robot motion and camera mounting positions](docs/media/scene.gif)
 
-A full orbit around the procedural desk and robot, with scripted base, lift, head
-and dual-arm poses. Kinematic illustration only: no physics, live camera feeds,
-physical robot or new performance measurement.
+A full orbit through the original kitchen scan: all 216,953 Gaussians, with a
+12-second recorded simulator joint excerpt looped twice. Blue outlines show the
+stereo head; orange and pink hemispheres show the wrist fisheyes. Offline joint
+replay and camera-layout illustration; no physical robot or new timing result.
 
 ### Voice / two real speakers, before and after
 
@@ -26,6 +27,34 @@ Edinburgh CSTR, [dataset](https://doi.org/10.7488/ds/2645).
 [Subtitles](docs/media/voice_demo.srt) / [source and changes](docs/media/voice_sources.json).
 This illustrates the default CPU DSP; it is not a new listening or latency result.
 
+### Four robot cameras / recorded simulator RGB
+
+![Stereo head and both wrist cameras during recorded arm motion](docs/media/cameras.gif)
+
+Twelve seconds from an original SAPIEN recording, sampled at 6 fps per stream.
+Each panel holds its latest delivered frame and displays source exposure time.
+These cameras render the fitted scene primitives and scan-derived tabletop
+texture; they do not render the full Gaussian scan shown above.
+
+### Wrist fisheyes / arm occlusion included
+
+![Left and right 180-degree wrist fisheye camera views](docs/media/wrists.gif)
+
+The circular 180-degree views retain the recorded arm occlusions. This small
+public sample supplies RGB only; wrist depth in the full simulator is simulated.
+
+### Physical phone camera / approved silent excerpt
+
+![Twelve seconds of real kitchen phone footage](docs/media/phone.gif)
+
+Original seconds 6-18, with audio and metadata removed.
+[Silent MP4](docs/media/phone_excerpt.mp4). This is a separate real phone recording;
+it does not demonstrate robot-camera depth or geometry fusion. No USB camera
+footage was saved in the source material inspected.
+
+Kitchen, phone and derived scene/camera media are copyright retained, with public
+display permission only and no reuse licence. See the [exact asset list](docs/data.md).
+
 ## What it does
 
 **Voice.** A causal, CPU-only pipeline turns microphone audio into a fixed robot
@@ -36,8 +65,8 @@ adapter is retained for research; its timing and quality misses are documented.
 **Scene and robot.** A holonomic base, lift, two 7-DOF arms, stereo head and wrist
 fisheye cameras feed a local operator view. A fixed Gaussian-splat prior is checked
 against timestamped live observations. Old, live, stale and unknown geometry have
-separate states. The public demo generates a procedural desk; the original home
-scan and recordings are excluded.
+separate states. The public demo includes the owner-approved kitchen scan, a
+sampled historical simulator RGB/state replay and a separate silent phone excerpt.
 
 ![System architecture](docs/media/architecture.svg)
 
@@ -82,17 +111,19 @@ Live audio requires Windows and working devices and was not rerun for this copy.
 ```powershell
 .\run.ps1 scene
 .\run.ps1 operator
+# In a second shell at the repository root:
+.\run.ps1 cameras --loops 3
 ```
 
-Open [localhost:8090](http://127.0.0.1:8090). The first command creates a new
-procedural Gaussian prior and robot assets. For camera feeds, run the replay
-command in [the scene guide](docs/scene.md) in a second shell. For the full SAPIEN
+Open [localhost:8090](http://127.0.0.1:8090). The first command restores the packed
+kitchen prior and generates robot assets. The replay publishes four recorded RGB
+streams, joints and odometry. See [the scene guide](docs/scene.md). For the full SAPIEN
 simulator, see the optional installation and GPU requirements there.
 
 ## Results
 
 These results were measured on the original build; this repository is a renamed
-copy with new packaging, synthetic examples and procedural defaults. Original
+copy with new packaging and short presentation replays. Original
 freeze hashes and receipts do **not** certify this code. The source revision and
 retained numerical evidence are described in [provenance](docs/provenance.md).
 
@@ -122,9 +153,9 @@ the neural compute misses, soak scope and the failed listening criterion.
   does not always improve changed-region F1 over live observations alone.
 - Wrist depth and noisy odometry are simulated. There is no physical robot, no
   onboard compute validation and no physical depth/display timing result.
-- The procedural public example is different from the historical real desk.
-  Retained result summaries cannot regenerate all historical experiments without
-  the excluded data and missing historical tooling.
+- The public scan retains the original renderer inputs, but its short sampled
+  RGB replay omits wrist depth and cannot reproduce the historical experiments.
+  Full raw episodes and some historical tooling remain excluded or unavailable.
 
 ## Explore
 
@@ -140,3 +171,6 @@ the neural compute misses, soak scope and the failed listening criterion.
 Original code is licensed under [Apache-2.0](LICENSE). Third-party code and data
 retain their own terms; the notices include the GPL-3.0 grant for the excluded
 Seed-VC comparison.
+
+Personal kitchen/phone media and their derivatives are excluded from Apache-2.0:
+public display is permitted, with copyright retained and no media reuse licence.

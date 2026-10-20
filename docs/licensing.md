@@ -17,3 +17,12 @@ used in historical neural experiments carries CC BY-SA 3.0 terms.
 
 See [THIRD_PARTY.md](../THIRD_PARTY.md) for component-specific attribution and full
 retained notices. See [data policy](data.md) for material excluded from this copy.
+
+## Personal scene and phone media
+
+Copyright 2026 Zixin Wang. All rights reserved. The kitchen scan, tabletop
+texture, sampled camera replay, phone excerpt and derived scene/camera/phone
+GIFs and stills listed in [data policy](data.md) are excluded from Apache-2.0.
+The owner authorizes their display in this public repository but grants no
+media reuse licence. Contact the owner for any further permission. This does
+not change the CC BY 4.0 licence of the separate VCTK voice assets.

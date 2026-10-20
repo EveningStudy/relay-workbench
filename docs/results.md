@@ -74,7 +74,8 @@ that result does not establish gated speech quality during recovery.
 Nominal runs requested 24 seconds of an empty scene with a fixed 216,953-Gaussian
 real scan, fitted desk/box/mug and procedural floor/chair. Head cameras were
 384x240 at declared 20/20 Hz; wrists 256x256 at 10/8 Hz; recorder off. These
-are settings, not achieved rates. The public procedural example is different.
+are settings, not achieved rates. The public scan retains the original renderer inputs, but the short sampled
+RGB/state replay cannot reproduce these historical runs.
 
 Both nominal p95 values are below the 150 ms capture-to-DOM aim. This is a
 host/browser proxy, not physical screen timing or scene-change response. All

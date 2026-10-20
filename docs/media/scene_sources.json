@@ -1,0 +1,90 @@
+{
+  "copyright": "Copyright 2026 Zixin Wang. All rights reserved. Public repository display permitted; no media reuse licence.",
+  "scan": {
+    "scan_gaussians": 216953,
+    "scan_original_sha256": "0b4dec129bacb74345a09491ca6e3879c4409224f4fc81af38acf761274c901a",
+    "packed_sha256": "0a8527aec429ea133e4f0c5b2db30381641e6205ce503cee1b973d06a8e52438",
+    "retained_properties": [
+      "x",
+      "y",
+      "z",
+      "f_dc_0",
+      "f_dc_1",
+      "f_dc_2",
+      "opacity",
+      "scale_0",
+      "scale_1",
+      "scale_2",
+      "rot_0",
+      "rot_1",
+      "rot_2",
+      "rot_3"
+    ],
+    "packing": "All renderer-consumed float32 properties retained exactly; unused normal/higher-order SH properties omitted. No downsampling.",
+    "texture": "Scan-derived tabletop; pixel data retained, metadata removed.",
+    "permission": "Owner approved kitchen scan and its rendered derivatives for public display on 2026-10-20.",
+    "personal_media": [
+      "scene_robot/assets/kitchen/prior.npz",
+      "scene_robot/assets/kitchen/tabletop.png"
+    ],
+    "replay_sha256": "17fba4cdf11937696fe45f6e980bcd756a4235f1b1ea214d71397b2412f037c1",
+    "replay_frames": 360,
+    "replay_joints": 240,
+    "media_licence": "Copyright retained by the owner; publication permission does not add a reuse licence. Apache-2.0 applies to code."
+  },
+  "scene": {
+    "duration_s": 24,
+    "frames": 144,
+    "fps": 6,
+    "method": "Viser client render; full fixed scan, recorded simulator joint excerpt looped twice, camera lens outlines; no live feed or physics during rendering"
+  },
+  "simulator_rgb": {
+    "duration_s": 12,
+    "source_excerpt_s": [
+      4,
+      16
+    ],
+    "sampling": "First exposure in each 1/6-second bin, original capture/send order, state sampled at 20 Hz",
+    "images": 360,
+    "jpeg_changes": "RGB decode and JPEG quality-90 re-encode; metadata removed; not bit-identical source JPEGs",
+    "geometry": "Fitted primitives and scan-derived tabletop texture, not full Gaussian camera rendering",
+    "source_kind": "Scripted historical SAPIEN episode; no physical robot"
+  },
+  "phone": {
+    "approved_source_excerpt_s": [
+      6,
+      18
+    ],
+    "duration_s": 12,
+    "audio_stream": false,
+    "metadata_removed": true,
+    "source_sha256": "a00541eee50c8a7af8686cc7093a1008ac05aa74e1945b54535aa22d005e662f",
+    "scope": "Only excerpt and GIF approved; full original excluded"
+  },
+  "outputs": {
+    "scene.gif": {
+      "bytes": 9711619,
+      "sha256": "d52b6ebba600e3494a42458af963a992f4e6ea85284a6cc8fba482189d1361ff"
+    },
+    "cameras.gif": {
+      "bytes": 769246,
+      "sha256": "17e2a6d312a0385244a4840988d1ccde79b013cac3eff6174faade62282a9a09"
+    },
+    "wrists.gif": {
+      "bytes": 830254,
+      "sha256": "a3fbcd624cbd80eb92fac996ac8a37d612ea5f8c74e3430e36a9e9a3a91a1b35"
+    },
+    "phone.gif": {
+      "bytes": 6590232,
+      "sha256": "4bb7e5c7440ddedcb5efc740962745ff23cdd005d17fa0681ae106ccf6ae4625"
+    },
+    "phone_excerpt.mp4": {
+      "bytes": 757764,
+      "sha256": "66d47c5c9b009ad77509047086ac91c22493014a2e3407f2ff8abf7143004099"
+    },
+    "operator.png": {
+      "bytes": 137080,
+      "sha256": "e48eb4b767edfdddd78f938c83f6f568b2c09ff45823586bedf4f449a4022fe0"
+    }
+  }
+}

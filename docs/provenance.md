@@ -15,9 +15,13 @@ new synthetic replay validate only their stated functional contracts.
   historical per-project GPU environments. The default voxel map selects CPU.
 - Vendored package metadata uses neutral names; upstream algorithm source is
   unchanged. The full original copyright and licence grants are retained.
-- All default scene inputs are procedural; no personal scan, fitted home meshes,
-  measurements, texture or camera calibration is included. Public scene geometry
-  is different and does not inherit historical accuracy/performance claims.
+- The owner approved the aligned kitchen scan and scan-derived tabletop texture.
+  Packing retains all renderer-consumed float32 values without downsampling.
+  Measured fitted primitive dimensions are retained; calibration photos and full
+  raw episodes remain excluded. The short sampled RGB/state replay is a
+  presentation excerpt and does not inherit historical benchmark claims.
+- The owner approved only seconds 6-18 of a physical phone recording, silent,
+  plus its GIF. Personal media has display permission and no reuse licence.
 - Robot geometry is generated from the retained editable design. New recorder
   sessions use a generic operator label instead of a person's identity.
 - Tests retain their original assertions for audio DSP, callbacks, metrics,
@@ -40,7 +44,7 @@ per-pulse scores. Original local paths and branding strings inside summaries wer
 redacted or renamed; numerical values were not changed.
 
 These are curated summaries and receipts, not a full raw experiment archive.
-Long callback logs, browser traces, source video frames, private scene inputs,
+Long callback logs, browser traces, full source video frames, remaining private inputs,
 converted speech corpora and neural weights are absent. Some historical scripts
 and inputs were already missing in the source package. Re-running the quick start
 does not regenerate historical WER, listening scores or scene benchmarks.

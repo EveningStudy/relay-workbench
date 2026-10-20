@@ -1,63 +1,80 @@
 # Verification
 
-Checked on Windows x64 with Python 3.11.17, using this repository's setup and task
-launchers. No personal input, neural checkpoint or GPU was used for these checks.
+Checked on Windows x64 with Python 3.11.17. Default tests/replay use CPU and need
+no neural checkpoint. Historical measurements were not rerun.
+
+## Kitchen and camera refresh
 
 | Check | Outcome | Scope |
 | --- | --- | --- |
-| `setup.ps1 -Python <Python-3.11-executable>` | Passed | Fresh local venv, Internet package install, hashed CPU lock. |
-| `python -m pip check` in the venv | Passed | Installed package requirements consistent. |
+| `run.ps1 scene` | Passed | Restored 216,953 kitchen Gaussians and generated robot geometry. |
+| Scan packing comparison | Exact equality | Original/restored centers, covariance, RGB and opacity arrays; tabletop decoded pixels also equal. |
 | `run.ps1 test` | 69 passed | Original lightweight suites and synthetic default replay. |
 | `run.ps1 smoke` | Passed | 48,000 audio samples; 80 camera frames, 20 joint and 20 odometry messages. |
-| `run.ps1 scene` | Passed | Generated robot and 11,998 procedural Gaussians. |
-| `run.ps1 operator` | Passed with renderer diagnostic below | CPU map and procedural prior loaded. |
-| Browser interaction | Passed | Chrome 1440x1000; canvas focus, right-arm selection, STOP response. |
-| `python scripts/results.py --check` | Passed | Page matches retained numerical summaries; no experiment rerun. |
-| Release audit | Passed | Text, paths, subtitle text, media metadata, size limits and private disallowed-term list. |
-| Source preservation | Passed | 51,680 source files retain their SHA-256 digests and source Git HEAD is unchanged. |
+| `run.ps1 cameras --speed 1` | Passed | Independent subscriber received 288 RGB frames (72 per robot camera), 240 joints and 233 odometry messages; no depth. |
+| Operator + recorded replay | Passed | Edge showed all four 6 fps streams, moving joint state, stereo images and circular wrist views. Functional display check, no timing benchmark. |
+| Scene GIF | Passed | 144 fully decoded frames, 24 seconds at 6 fps; actual Viser rendering of the kitchen prior and joint replay. |
+| Camera and phone GIFs | Passed | 72 fully decoded frames / 12 seconds each; contact-sheet visual review. |
+| Phone MP4 | Passed | Full decode; exactly 12 seconds, no audio or subtitle stream, no location metadata. |
+| `python scripts/results.py --check` | Passed | Page matches retained summaries; no new benchmark. |
 
-## Browser check
+An initial 10x accelerated camera replay lost messages through the bounded
+transport queues. At normal speed, all bundled messages reached the independent
+subscriber. The archive contains 233 odometry samples, not 240; state sampling
+is nominally 20 Hz and does not invent missing source samples. Normal-speed
+receipt does not promise lossless delivery under accelerated load or prove
+historical timing/geometry accuracy.
 
-The Browser plugin was unavailable, so the check used installed Chrome through
-Playwright. The correct page title and meaningful scene/control content rendered.
-There was no framework overlay. Right-arm selection changed the visible banner;
-STOP remained responsive. The screenshot is from this actual procedural operator view. The updated
-24-second GIF uses the same scene/robot geometry with explicitly scripted joint
-poses and an orbit camera, captured through Viser's client renderer. It does not
-show physics, teleoperation or live camera observations. The new 33-second voice
-film uses two approved VCTK recordings and the default DSP, not system TTS.
+The separate 100-second operator check consumed 1,143 of 1,152 published frames
+across four loops, with nine recorded per-camera queue overflows. All four
+panels displayed images. This confirms functional display with freshness drops;
+it does not establish lossless operator playback.
 
-![Procedural operator view](media/operator.png)
+The browser check used the Computer Use browser API with Edge. The four camera
+panels displayed the recorded images, and the UI received the corresponding
+robot joint states. The public still below is a frame of the offline scan tour;
+it is not a screenshot claiming live fusion performance.
+
+![Kitchen prior with robot and camera layout](media/operator.png)
 
 Pinned Viser/Three.js emits a nonfatal `computeBoundingSphere` diagnostic for an
-instanced Gaussian quad with two-component positions. Inspection found zero
-nonfinite values in that position buffer. The scene remains visible and interactive.
-There are also upstream clock-deprecation and shader-precision warnings. These
-are retained findings, not a clean-console claim.
+instanced Gaussian quad with two-component positions. Earlier inspection found
+no nonfinite position-buffer values. The scan remains visible. Upstream clock
+deprecation and shader-precision warnings also remain; this is no clean-console
+claim. During the sampled RGB replay the fusion map can suppress parts of the
+prior because its fitted camera geometry differs from the scan; the GIFs do not
+claim reconstruction improvement.
+
+## Earlier setup and voice checks
+
+The root setup previously installed a fresh venv using the hashed CPU lock;
+`pip check` passed. Browser arm selection and STOP checks passed on the earlier
+procedural example. The new kitchen replaces that example. An earlier concurrent
+test attempt failed on a busy port; stopping the preview service restored the
+69-test pass without changing product assertions.
+
+The 33-second voice film uses approved VCTK p226_003_mic2 and p237_003_mic2 with
+the default DSP. Source FLAC-to-WAV conversion preserved every decoded sample.
+Full film video/audio decode passed. Spoken content is based on owner-approved
+paired dataset transcripts, not an independent human listening audit. Attribution
+is visible in the film and its source manifest. No owner speech is published.
+
+The release audit checks case-insensitive whole words and identifier boundaries
+in every Git-visible path/text file, decoded subtitles, archive entry paths/JSON,
+NPZ headers, image/video/audio metadata and reachable commit metadata. It also
+checks Chinese characters, LFS pointers and the 100 MB file limit. Private audit
+terms and detailed receipts are kept outside the repository. Media captions and
+representative frame contact sheets were reviewed; no OCR or independent speech
+transcription is claimed.
+
+The original source is read-only. Its separate before/after inventory covers
+51,680 file hashes and the source HEAD. No historical result value was changed.
 
 ## What this does not verify
 
-No physical microphone/output run, listening study, new WER evaluation, neural
-model installation, full GPU simulation or historical benchmark was rerun. The
-small episode is a generated image/depth pattern fixture. It verifies decode,
-state and transport only; publishing messages does not by itself verify receipt
-by a viewer or validate geometry quality.
-
-The original build's measurements remain historical evidence. Repackaging and
-passing functional tests do not make them measurements of this renamed CPU setup.
-
-## Demo refresh
-
-The README now places a robot GIF and a GitHub-hosted voice player before the
-architecture/quick start. The voice film is 33 seconds, using VCTK p226_003_mic2
-and p237_003_mic2 with the same default DSP configuration as the live application.
-Both FLAC-to-WAV source conversions preserve every decoded sample. Full video
-and audio decode passed; content is based on owner-approved dataset transcripts,
-not a new independent listening audit. Attribution is on screen and in the
-source manifest.
-
-The lightweight suite passed again (69 tests), and smoke replay passed with the
-same 48,000 / 80 / 20 / 20 sample/message counts. An earlier concurrent test attempt
-had one address-in-use failure because the preview service held port 5602; with
-the service stopped, the suite passed. No product code or historical result was
-changed to obtain that pass.
+No physical microphone/output run, new listening study, WER evaluation, neural
+model installation, full GPU simulation or historical benchmark was rerun. There
+is no physical robot. The separate phone film shows RGB only. Simulated wrist
+depth is absent from the small public replay, and USB RGB footage was not found.
+Passing functional checks does not make original measurements results of this
+renamed CPU setup.

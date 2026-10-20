@@ -1,6 +1,6 @@
 """Audit Git-visible paths/text/media with an externally supplied private term list."""
 from pathlib import Path
-import argparse,json,re,subprocess,sys
+import argparse,io,json,re,subprocess,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1]
 
 def decode(data):
@@ -22,8 +22,17 @@ def main():
     def check(text,kind,path):
         for i,(token,word) in enumerate(zip(patterns,ordinary)):
             if token.search(text) or word.search(text):counts[kind]+=1;hits.append({'path':path,'kind':kind,'term_index':i})
+    def check_cjk(text,path):
+        if re.search(r'[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U000323af]',text):
+            counts['cjk']+=1;hits.append({'path':path,'kind':'cjk'})
+    def image_metadata(data,name):
+        from PIL import Image
+        with Image.open(io.BytesIO(data)) as im:
+            encoded=json.dumps({**im.info,'exif':dict(im.getexif())},default=str)
+            check(encoded,'metadata',name);check_cjk(encoded,name)
+            if re.search(r'GPS|latitude|longitude|location',encoded,re.I):raise AssertionError('Location metadata: '+name)
     for name in paths:
-        check(name,'paths',name);path=ROOT/name
+        check(name,'paths',name);check_cjk(name,name);path=ROOT/name
         size=path.stat().st_size;max_size=max(max_size,size)
         if size>100_000_000:counts['over_100_mb']+=1
         data=path.read_bytes();t=decode(data)
@@ -33,12 +42,25 @@ def main():
             if data.startswith(b'version https://git-lfs.github.com/spec/v1'):counts['lfs_pointers']+=1
             if path.suffix.lower() in ['.srt','.vtt','.ass','.ssa']:
                 subtitle_count+=1;check(t,'subtitles',name)
+        if path.suffix.lower() in ['.zip','.npz']:
+            with zipfile.ZipFile(io.BytesIO(data)) as archive:
+                for entry in archive.infolist():
+                    inner=name+'!'+entry.filename
+                    check(entry.filename,'paths',inner);check_cjk(entry.filename,inner)
+                    check(entry.comment.decode('utf-8','replace'),'metadata',inner)
+                    payload=archive.read(entry);decoded=decode(payload)
+                    if decoded is not None:
+                        text_count+=1;check(decoded,'text',inner);check_cjk(decoded,inner)
+                    elif entry.filename.endswith('.npy'):
+                        import numpy as np
+                        stream=io.BytesIO(payload);version=np.lib.format.read_magic(stream)
+                        shape,order,dtype=np.lib.format._read_array_header(stream,version)
+                        header=str((shape,order,dtype.descr))
+                        check(header,'metadata',inner);check_cjk(header,inner)
+                    if Path(entry.filename).suffix.lower() in ['.png','.jpg','.jpeg','.gif']:
+                        image_metadata(payload,inner);media_count+=1
         if path.suffix.lower() in ['.png','.jpg','.jpeg','.gif']:
-            from PIL import Image
-            with Image.open(path) as im:
-                encoded=json.dumps({**im.info,'exif':dict(im.getexif())},default=str)
-                check(encoded,'metadata',name)
-                if re.search(r'GPS|latitude|longitude|location',encoded,re.I):raise AssertionError('Location metadata: '+name)
+            image_metadata(data,name)
             media_count+=1
         if path.suffix.lower() in ['.mp4','.mov','.wav']:
             import imageio_ffmpeg
@@ -54,7 +76,7 @@ def main():
     result={'passed':not any(counts.values()),'files':len(paths),'text_files':text_count,'subtitle_sources':subtitle_count,'media_files':media_count,
         'checked_terms':len(terms),'search':'case-insensitive whole words plus identifier-token boundaries; term list kept outside repository',
         'counts':counts,'max_file_bytes':max_size,'tracked_payload_bytes':sum((ROOT/n).stat().st_size for n in paths),
-        'spoken_scope':'Approved synthetic reference texts plus two VCTK clips with owner-approved paired dataset transcripts; no independent listening audit, original film or personal owner recording.',
+        'spoken_scope':'Approved synthetic reference texts plus two VCTK clips with owner-approved paired dataset transcripts; no independent listening audit or personal owner speech. Approved phone excerpt has no audio stream; original films excluded.',
         'hits':hits}
     if a.output:a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(result,indent=2),encoding='utf-8')
     print(json.dumps(result));return 0 if result['passed'] else 1

@@ -1,6 +1,6 @@
 # Scene and robot guide
 
-## Procedural operator view
+## Kitchen operator view
 
 From the root after setup:
 
@@ -9,30 +9,52 @@ From the root after setup:
 .\run.ps1 operator
 ```
 
-Open [the local operator view](http://127.0.0.1:8090). The generated prior is an
-unmeasured procedural desk, not the historical real scan. Robot meshes and its
-URDF are generated from `scene_robot/configs/robot.yaml`. Gaussian attributes are
-written in standard PLY form and displayed by Viser.
+Open [the local operator view](http://127.0.0.1:8090). The preparation command
+restores the packed, aligned kitchen scan and generates robot meshes/URDF from
+`scene_robot/configs/robot.yaml`. All 216,953 Gaussians retain the exact 14 float32
+properties consumed by this renderer. Packing omits unused normal and higher-order
+SH fields without downsampling. See `scene_robot/assets/kitchen/manifest.json`.
+The real reconstruction's holes and clutter remain visible.
 
-## Small camera/state replay
+The Gaussian prior is fixed. Physics and simulated RGB use fitted island/box/mug
+primitives, a scan-derived tabletop texture and procedural floor/chair. They do
+not render the full scan into every camera. Head cameras are pinholes; wrist
+cameras use 180-degree fisheye projection. Wrist depth and odometry are simulated.
 
-Run `./run.ps1 smoke` first to create the tiny fixture. With the operator running,
-open a second PowerShell at the repository root:
+## Recorded robot-camera replay
+
+With the operator running, use a second shell at the repository root:
 
 ```powershell
-$env:PYTHONPATH = "$PWD/scene_robot"
-.\.venv\Scripts\python.exe -m p2.io.replay_node outputs/synthetic_episode --speed 1 --output-log outputs/viewer_replay.json
+.\run.ps1 cameras --loops 3
 ```
 
-This one-second generated pattern episode supplies four camera streams, joints
-and odometry. Its images and depth are deliberately simple transport fixtures,
-not physically rendered desk observations. It is useful for checking feed/status
-updates. Run it again to replay. Port 5600 must have only one producer at a time.
+The bundled 6.47 MB archive contains a 12-second historical simulator excerpt:
+72 sampled RGB images per stream (6 fps), four robot streams plus an external
+view used for media, and 20 Hz sampled joints/odometry. The publisher sends only
+the four robot streams. Original capture/send ordering is retained and timestamps
+are rebased for playback; the images are metadata-free JPEG re-encodes. This is
+presentation replay, with no new timing or benchmark result.
+
+No wrist depth, evaluation truth or full raw episode is bundled. Stereo may be
+recomputed by the viewer, but this excerpt cannot reproduce the historical fusion
+metrics. Run only one camera publisher on port 5600 at a time.
+
+For a generated transport fixture, `run.ps1 smoke` still creates 80 simple
+camera/depth frames and 20 joint/odometry messages. It is a functional check.
+
+## Physical phone excerpt
+
+The separate phone GIF/MP4 contains only approved source seconds 6-18, silent,
+with metadata removed. It shows real kitchen RGB, not a robot camera or depth
+measurement. The full phone source and calibration photos are excluded. The
+inspected USB test directory contains recovery logs but no saved RGB footage;
+there is consequently no physical USB camera demonstration here.
 
 ## Optional full simulator
 
-SAPIEN rendering requires a compatible graphics/Vulkan environment. This path is
-outside the CPU-only smoke check. In the existing local environment:
+SAPIEN rendering requires a compatible graphics/Vulkan environment. It is outside
+the CPU smoke check and was not revalidated for this media refresh.
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install sapien==3.0.3
@@ -45,27 +67,25 @@ outside the CPU-only smoke check. In the existing local environment:
 
 Click the canvas for keyboard focus. WASD moves the base; Q/E turns; arrows move
 the head; R/F changes lift; T/G changes hip. Space/STOP cancels motion. Arm
-selection and smooth presets are available in the panel. The optional simulator
-installation and live GPU rendering were not revalidated for the public copy.
+selection and smooth presets are available in the panel. There is no physical robot.
 
-The original fixed scan, fitted home geometry, phone calibration, human teleop
-episodes and phone/webcam/OBS recordings are excluded. Supplying a new real scan
-also requires scale/pose alignment and an appropriate collision scene; copying a
-PLY into the procedural example does not establish that alignment.
+## Rebuild the demonstrations
 
-## Rebuild the README animation
-
-After `run.ps1 scene`, stop any running operator/simulator processes and run:
+Stop other operator/simulator processes first:
 
 ```powershell
+.\run.ps1 scene
+.\.venv\Scripts\python.exe scripts/make_camera_media.py
 .\.venv\Scripts\python.exe scripts/make_scene_media.py
 ```
 
-Open `http://127.0.0.1:8090` in a browser within three minutes. Keep that tab open
-while the script requests 192 rendered frames from Viser. The script updates URDF
-joint configurations and orbits the render camera, then writes a roughly
-24-second, 6 fps looping GIF to `docs/media/scene.gif` and stops the server.
-The browser renders the same procedural prior and robot geometry as the operator
-view. Motion is scripted kinematics; no physics, teleoperation, live observation
-or latency measurement is shown. Only the rendered scene and neutral captions
-are captured, without browser chrome or local session information.
+Open `http://127.0.0.1:8090` within three minutes and keep the browser connected.
+Viser's client renderer captures 144 frames for the 24-second, 6 fps scene GIF.
+It updates recorded joint poses and camera lens outlines while orbiting the scan.
+It does not run physics or receive live camera feeds during this offline capture.
+The camera GIFs decode the bundled historical RGB, preserving fisheye aspect ratio.
+
+`make_phone_media.py <owner-provided-source>` rebuilds only the approved phone
+interval. The full source is intentionally absent. Kitchen/phone assets and their
+derivatives have public display permission only, with no reuse licence; see
+[licensing](licensing.md).

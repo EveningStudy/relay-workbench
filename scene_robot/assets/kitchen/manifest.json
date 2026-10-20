@@ -1,0 +1,32 @@
+{
+  "scan_gaussians": 216953,
+  "scan_original_sha256": "0b4dec129bacb74345a09491ca6e3879c4409224f4fc81af38acf761274c901a",
+  "packed_sha256": "0a8527aec429ea133e4f0c5b2db30381641e6205ce503cee1b973d06a8e52438",
+  "retained_properties": [
+    "x",
+    "y",
+    "z",
+    "f_dc_0",
+    "f_dc_1",
+    "f_dc_2",
+    "opacity",
+    "scale_0",
+    "scale_1",
+    "scale_2",
+    "rot_0",
+    "rot_1",
+    "rot_2",
+    "rot_3"
+  ],
+  "packing": "All renderer-consumed float32 properties retained exactly; unused normal/higher-order SH properties omitted. No downsampling.",
+  "texture": "Scan-derived tabletop; pixel data retained, metadata removed.",
+  "permission": "Owner approved kitchen scan and its rendered derivatives for public display on 2026-10-20.",
+  "personal_media": [
+    "scene_robot/assets/kitchen/prior.npz",
+    "scene_robot/assets/kitchen/tabletop.png"
+  ],
+  "replay_sha256": "17fba4cdf11937696fe45f6e980bcd756a4235f1b1ea214d71397b2412f037c1",
+  "replay_frames": 360,
+  "replay_joints": 240,
+  "media_licence": "Copyright retained by the owner; publication permission does not add a reuse licence. Apache-2.0 applies to code."
+}

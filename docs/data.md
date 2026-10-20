@@ -2,55 +2,77 @@
 
 ## Included
 
-- Source, configuration, tests and procedural robot geometry.
-- Small numerical result tables and receipts, with private paths removed.
+- Source, configuration, tests and generated robot geometry.
+- Small historical numerical result tables/receipts with private paths removed.
 - Eighteen approved synthetic reference WAVs: raw/character clips 02 through 10.
-- The original fixed target embedding, unchanged. One original spoken reference
-  is withheld; the embedding's ten-clip provenance is disclosed in the voice guide.
-- Newly generated architecture art and a 24-second procedural robot animation.
+- The unchanged fixed target embedding, computed from the original ten clips.
+  Clip 01 is withheld because it contains a placeholder name.
 - Two publicly licensed VCTK WAVs and a 33-second source/character comparison.
-  No personal owner recordings.
+- The owner-approved kitchen scan, texture, short simulator replay and silent
+  phone excerpt listed below. No personal owner speech or listener data.
+
+## Exact personal-media publication scope
+
+Copyright 2026 Zixin Wang. **All rights reserved.** The owner permits public
+repository display of these assets; no licence to reuse the media is granted.
+They are excluded from the root Apache-2.0 licence.
+
+| Repository file | Published content |
+| --- | --- |
+| `scene_robot/assets/kitchen/prior.npz` | Aligned kitchen scan: all 216,953 Gaussians, 14 renderer-consumed fields; 8.36 MB. |
+| `scene_robot/assets/kitchen/tabletop.png` | Scan-derived tabletop texture, RGB pixels retained, metadata removed. |
+| `scene_robot/assets/kitchen/camera_replay.zip` | 12-second sampled simulator RGB/state excerpt; 360 metadata-free JPEGs across five streams, joints/odometry; 6.47 MB. Camera RGB uses the personal tabletop texture. |
+| `scene_robot/assets/kitchen/manifest.json` | Scan/replay hashes, retained properties and publication scope. |
+| `docs/media/scene.gif` | 24-second orbit of kitchen scan, robot joint replay and camera mounts. |
+| `docs/media/cameras.gif` | 12-second stereo-head and two-wrist simulator RGB panel. |
+| `docs/media/wrists.gif` | 12-second two-wrist simulator RGB panel. |
+| `docs/media/phone.gif` | Silent GIF from original phone seconds 6-18 only. |
+| `docs/media/phone_excerpt.mp4` | Same approved 12-second phone interval, silent, metadata removed. |
+| `docs/media/operator.png` | Still from the kitchen scan demonstration. |
+| `docs/media/scene_sources.json` | Derivation, hashes and exact permission boundaries. |
+
+The aligned scan is packed without downsampling. Unused normals and higher-order
+SH properties are omitted; all inputs consumed by the current renderer are
+unchanged. The replay samples one exposure per 1/6-second bin from original
+seconds 4-16 of a scripted simulator episode, with state sampled at 20 Hz.
+This is a presentation excerpt, not a selected benchmark result. JPEGs are
+re-encoded, so they are not claimed to be bit-identical source images.
 
 ## Excluded
 
-The historical scan, fitted home meshes/textures, photos, phone videos, webcam and
-OBS footage, the owner's voice recordings, human teleop episodes, listening materials,
-all original films and original subtitles are excluded. **No personal file is
-included or proposed for publication in this version.** There is no listener data
-in this copy, including no private listener identities.
+Full phone recordings, calibration/other home photos, raw scan capture, unused
+scan properties, physical USB footage, OBS films, original narrated films and
+subtitles, owner voice, human teleop episodes and listening materials remain out.
+No private listener identities or listener-level data is included. Reference clip
+01 is absent in raw and character form. The old films visibly contain private
+branding in title cards/browser UI and the voice narration contains it in speech;
+renaming their files would not remove that content. They remain excluded.
 
-Reference clip 01 is absent in both raw and character form. Old film narration,
-title cards and UI captures are not fixed by renaming files; both existing films
-are left out. The new scene animation is silent, and the new voice film uses the two approved
-VCTK clips with their published dataset transcripts. New image/video files contain no location metadata.
+The new scene/camera GIFs are silent. The phone MP4 has no audio stream. Voice demo
+speech uses the two owner-approved VCTK transcripts, not inferred spoken content.
+Published image/video containers carry no location metadata.
 
 ## Why no LFS
 
-Clones contain only small, useful assets. No LFS filters or pointers are used and
-no file over 100 MB is committed. Neural checkpoints, multi-gigabyte recordings,
-long callback traces, repetitive captures, toolchains and caches do not belong in
-every source checkout.
+Useful runnable assets are packed into ordinary Git files under 100 MB. The scan
+pack is 8.36 MB rather than the original 53.81 MB PLY; the short replay is 6.47 MB.
+No LFS filters or pointers are used. Multi-gigabyte raw captures, checkpoints,
+callback traces and caches are excluded. No private archive is linked or uploaded.
+A future large approved dataset could be a separately downloadable GitHub Release
+with a checksum, provenance and explicit licence; none is provided now.
 
-No private archive is linked or uploaded. If larger public examples are later
-approved, a versioned GitHub Release can carry a separately downloadable archive,
-checksum, licence and provenance manifest. A release asset needs the same media
-and privacy review as a Git commit. There are currently no such releases.
-
-Setup downloads Python packages separately; their installed size is not the
-repository clone size. It includes CPU PyTorch for voxel-map tests/UI, not CUDA
-wheels. The live simulator and neural models are optional separate installations.
+Setup downloads Python packages separately; installed environment size is not
+clone size. It includes CPU PyTorch, not CUDA wheels. GPU simulation and neural
+models require separate optional installations.
 
 ## Third-party speech dataset
 
-Historical heldout results use CSTR VCTK Corpus 0.92: Junichi Yamagishi,
-Christophe Veaux and Kirsten MacDonald (2019), University of Edinburgh CSTR,
-[DOI 10.7488/ds/2645](https://doi.org/10.7488/ds/2645), CC BY 4.0. Most of the corpus and
-its historical converted/stress samples are not bundled. Only `p226_003_mic2`
-and `p237_003_mic2` are included as metadata-free WAV containers and as DSP/video
-adaptations, retaining CC BY 4.0 attribution and a record of changes in
-`media/voice_sources.json`. No endorsement by speakers or corpus authors is
-implied. The two speakers read the same standard elicitation sentence.
-The nine published synthetic target
-texts include the standard elicitation passage; they are generated speech, not
-recordings of VCTK participants. Keep the retained full CC BY notice with any
-future VCTK adaptations.
+CSTR VCTK Corpus 0.92: Junichi Yamagishi, Christophe Veaux and Kirsten MacDonald
+(2019), University of Edinburgh CSTR,
+[DOI 10.7488/ds/2645](https://doi.org/10.7488/ds/2645), CC BY 4.0.
+Only `p226_003_mic2` and `p237_003_mic2` are included as metadata-free WAVs and
+DSP/video adaptations, retaining CC BY 4.0 attribution and recorded changes in
+`media/voice_sources.json`. No speaker/author endorsement is implied. The nine
+published synthetic target texts include the standard elicitation passage; those
+are generated speech, not VCTK participant recordings. Keep the full CC BY notice
+with VCTK adaptations. Historical heldout/stress corpora remain excluded.
