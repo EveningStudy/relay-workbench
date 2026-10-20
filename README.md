@@ -139,5 +139,4 @@ the neural compute misses, soak scope and the failed listening criterion.
 
 Original code is licensed under [Apache-2.0](LICENSE). Third-party code and data
 retain their own terms; the notices include the GPL-3.0 grant for the excluded
-Seed-VC comparison. This review copy remains private until the owner approves
-publication.
+Seed-VC comparison.
