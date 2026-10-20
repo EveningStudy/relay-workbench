@@ -1,7 +1,15 @@
 1
-00:00:00,000 --> 00:00:12,451
-Synthetic source: Relay Workbench processes voice in small audio blocks. The robot character runs locally on the CPU. This example uses synthetic speech.
+00:00:00,000 --> 00:00:08,010
+p226 / Original recording: Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.
 
 2
-00:00:12,951 --> 00:00:25,402
-Default robot character: Relay Workbench processes voice in small audio blocks. The robot character runs locally on the CPU. This example uses synthetic speech.
+00:00:08,667 --> 00:00:16,676
+p226 / Default robot character: Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.
+
+3
+00:00:17,333 --> 00:00:24,506
+p237 / Original recording: Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.
+
+4
+00:00:25,167 --> 00:00:32,339
+p237 / Default robot character: Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.

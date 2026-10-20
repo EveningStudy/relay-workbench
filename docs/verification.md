@@ -21,8 +21,11 @@ launchers. No personal input, neural checkpoint or GPU was used for these checks
 The Browser plugin was unavailable, so the check used installed Chrome through
 Playwright. The correct page title and meaningful scene/control content rendered.
 There was no framework overlay. Right-arm selection changed the visible banner;
-STOP remained responsive. The screenshot and orbit GIF are from this actual
-procedural operator view.
+STOP remained responsive. The screenshot is from this actual procedural operator view. The updated
+24-second GIF uses the same scene/robot geometry with explicitly scripted joint
+poses and an orbit camera, captured through Viser's client renderer. It does not
+show physics, teleoperation or live camera observations. The new 33-second voice
+film uses two approved VCTK recordings and the default DSP, not system TTS.
 
 ![Procedural operator view](media/operator.png)
 
@@ -42,3 +45,19 @@ by a viewer or validate geometry quality.
 
 The original build's measurements remain historical evidence. Repackaging and
 passing functional tests do not make them measurements of this renamed CPU setup.
+
+## Demo refresh
+
+The README now places a robot GIF and a GitHub-hosted voice player before the
+architecture/quick start. The voice film is 33 seconds, using VCTK p226_003_mic2
+and p237_003_mic2 with the same default DSP configuration as the live application.
+Both FLAC-to-WAV source conversions preserve every decoded sample. Full video
+and audio decode passed; content is based on owner-approved dataset transcripts,
+not a new independent listening audit. Attribution is on screen and in the
+source manifest.
+
+The lightweight suite passed again (69 tests), and smoke replay passed with the
+same 48,000 / 80 / 20 / 20 sample/message counts. An earlier concurrent test attempt
+had one address-in-use failure because the preview service held port 5602; with
+the service stopped, the suite passed. No product code or historical result was
+changed to obtain that pass.

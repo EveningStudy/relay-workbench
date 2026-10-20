@@ -2,7 +2,8 @@
 
 The root Apache-2.0 licence covers original project work only. Existing grants,
 copyright headers and notices remain with their respective components. No model
-checkpoint, native runtime, Python wheel or training dataset is redistributed.
+checkpoint, native runtime or Python wheel is redistributed. Only the two small
+VCTK speech examples described below are redistributed from that corpus.
 
 ## Retained source
 
@@ -22,7 +23,7 @@ has not been relicensed. Public-copy modifications are listed in
 
 | Component | Credit | Terms / retained notices |
 | --- | --- | --- |
-| CSTR VCTK 0.92 | Junichi Yamagishi, Christophe Veaux, Kirsten MacDonald (2019), University of Edinburgh CSTR; [official record](https://doi.org/10.7488/ds/2645) | CC BY 4.0; full `licenses/voice/licenses/vctk.txt`. Dataset not bundled. Historical converted/stress/listening audio are adaptations and are also excluded. |
+| CSTR VCTK 0.92 | Junichi Yamagishi, Christophe Veaux, Kirsten MacDonald (2019), University of Edinburgh CSTR; [official record](https://doi.org/10.7488/ds/2645) | CC BY 4.0; full `licenses/voice/licenses/vctk.txt`. Two clips, p226_003_mic2 and p237_003_mic2, are bundled as metadata-free WAVs under `docs/media/`. The voice demo synchronizes their source audio and default-DSP adaptations with a waveform video. Both audio and video adaptations retain CC BY 4.0; provenance is in `docs/media/voice_sources.json`. The rest of the corpus and historical converted/stress/listening audio are excluded. |
 | Kokoro-82M v1.0, af_heart | [hexgrad](https://huggingface.co/hexgrad/Kokoro-82M) | Apache-2.0 weights; nine synthetic raw clips plus their character adaptations are included, approved by the owner. |
 | Kokoro ONNX | [thewh1teagle](https://github.com/thewh1teagle/kokoro-onnx) | MIT runtime; `licenses/voice/licenses/kokoro_onnx_mit.txt`. |
 | Whisper large-v3 | OpenAI | Apache-2.0; used in historical scoring only, no weights bundled. |
@@ -37,9 +38,9 @@ has not been relicensed. Public-copy modifications are listed in
 | eSpeak NG / phonemizer | Respective upstream contributors | GPL native/dependency components; `licenses/voice/licenses/espeak_ng_gpl3.txt`; no executable bundled. |
 
 The target embedding was computed from ten original synthetic clips. One spoken
-clip is withheld; the vector is unchanged. The new voice demonstration instead
-uses Microsoft Hazel system TTS, processed by the default character transform.
-It contains no personal voice recording. The system voice/model is not bundled.
+clip is withheld; the vector is unchanged. The new voice demonstration uses the two approved VCTK recordings and their
+default DSP adaptations. Attribution and changes appear both on screen and in
+the source manifest. No personal owner voice recording is included.
 
 ## Scene, robot and tooling
 

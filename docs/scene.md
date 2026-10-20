@@ -52,3 +52,20 @@ The original fixed scan, fitted home geometry, phone calibration, human teleop
 episodes and phone/webcam/OBS recordings are excluded. Supplying a new real scan
 also requires scale/pose alignment and an appropriate collision scene; copying a
 PLY into the procedural example does not establish that alignment.
+
+## Rebuild the README animation
+
+After `run.ps1 scene`, stop any running operator/simulator processes and run:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/make_scene_media.py
+```
+
+Open `http://127.0.0.1:8090` in a browser within three minutes. Keep that tab open
+while the script requests 192 rendered frames from Viser. The script updates URDF
+joint configurations and orbits the render camera, then writes a roughly
+24-second, 6 fps looping GIF to `docs/media/scene.gif` and stops the server.
+The browser renders the same procedural prior and robot geometry as the operator
+view. Motion is scripted kinematics; no physics, teleoperation, live observation
+or latency measurement is shown. Only the rendered scene and neutral captions
+are captured, without browser chrome or local session information.

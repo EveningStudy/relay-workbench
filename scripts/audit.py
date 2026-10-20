@@ -54,7 +54,7 @@ def main():
     result={'passed':not any(counts.values()),'files':len(paths),'text_files':text_count,'subtitle_sources':subtitle_count,'media_files':media_count,
         'checked_terms':len(terms),'search':'case-insensitive whole words plus identifier-token boundaries; term list kept outside repository',
         'counts':counts,'max_file_bytes':max_size,'tracked_payload_bytes':sum((ROOT/n).stat().st_size for n in paths),
-        'spoken_scope':'Only approved synthetic reference texts and a newly generated neutral TTS script are included; no original film or personal recording.',
+        'spoken_scope':'Approved synthetic reference texts plus two VCTK clips with owner-approved paired dataset transcripts; no independent listening audit, original film or personal owner recording.',
         'hits':hits}
     if a.output:a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(result,indent=2),encoding='utf-8')
     print(json.dumps(result));return 0 if result['passed'] else 1

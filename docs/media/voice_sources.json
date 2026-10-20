@@ -1,0 +1,38 @@
+{
+  "dataset": "CSTR VCTK Corpus 0.92",
+  "authors": [
+    "Junichi Yamagishi",
+    "Christophe Veaux",
+    "Kirsten MacDonald"
+  ],
+  "year": 2019,
+  "publisher": "University of Edinburgh CSTR",
+  "source": "https://doi.org/10.7488/ds/2645",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "clips": [
+    {
+      "speaker": "p226",
+      "file": "vctk_p226_003.wav",
+      "source_file": "p226_003_mic2.flac",
+      "source_sha256": "e8e88a1910a33be1e08e9b5efd1af15ef11f3a2c463050de104fec5e16d222e5",
+      "sha256": "94bc877cf1362891529fb18273a39df970fe72520e15cf3c598490b6123e8cc1",
+      "text": "Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.",
+      "duration_s": 8.009625,
+      "changes": "FLAC to metadata-free PCM WAV; decoded samples unchanged"
+    },
+    {
+      "speaker": "p237",
+      "file": "vctk_p237_003.wav",
+      "source_file": "p237_003_mic2.flac",
+      "source_sha256": "3b17c69852569bb9c4240045e03165f78823e91c48d8d6e5e6a07186a2b88e93",
+      "sha256": "d51133e5ffb54b41134975b2c3c15b4a485cb6bf35d0118486319a14495d396c",
+      "text": "Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.",
+      "duration_s": 7.172645833333333,
+      "changes": "FLAC to metadata-free PCM WAV; decoded samples unchanged"
+    }
+  ],
+  "adaptation": "Source and default DSP output synchronized with waveform video; silence added between segments. No speech trimming or normalization.",
+  "spoken_content_basis": "Dataset paired transcripts, explicitly approved by repository owner; no independent listening audit claimed.",
+  "personal_owner_recording": false
+}

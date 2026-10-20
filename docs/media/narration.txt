@@ -1,1 +1,0 @@
-Relay Workbench processes voice in small audio blocks. The robot character runs locally on the CPU. This example uses synthetic speech.

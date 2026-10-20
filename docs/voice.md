@@ -20,16 +20,25 @@ readable. Bypass, simple baseline and the default are keys 1, 2 and 3.
 smoke script uses it on a generated harmonic probe. That signal checks finite,
 bounded output and functional state; it is not a speech quality demonstration.
 
-The [new narrated comparison](media/voice_demo.mp4) uses a system TTS sentence,
-then processes it through this repository's default DSP. It is synthetic speech,
-not a human recording or a new benchmark. The exact sentence is in the subtitles.
+The [33-second comparison](media/voice_demo.mp4) uses two real VCTK speakers,
+p226 and p237, reading the same sentence. For each speaker it plays the original
+recording and then this repository's default DSP output, with a moving waveform.
+No speech is trimmed or normalized; silence separates the four segments. This
+is an illustrative example, not a new listening, identity or latency result.
+The README embeds a GitHub-hosted player.
 
-To rebuild the comparison after root setup, run `scripts/narrate.ps1` and then
-`.venv/Scripts/python.exe scripts/make_voice_media.py` from the root. Narration
-requires the installed Microsoft Hazel English system voice; no TTS model is
-downloaded or redistributed. The second command uses the retained synthetic input
-WAV and works without a system voice. Run the smoke command first to create the
-ignored `outputs` directory.
+Rebuild it after root setup with:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/make_voice_media.py
+```
+
+The two small source WAVs are bundled in `docs/media/`, with transcript, hashes,
+changes and CC BY 4.0 attribution in `voice_sources.json`. FLAC containers were
+converted to PCM WAV without changing decoded samples or retaining ancillary
+metadata. No TTS voice, model download or personal owner recording is required.
+The spoken-content review uses dataset transcripts explicitly approved by the
+owner; it is not an independent listening audit.
 
 ## Synthetic target references
 

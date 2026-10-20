@@ -5,7 +5,26 @@ Local robot-character audio and an operator view for a simulated mobile robot.
 Two experiments share one concern: keeping useful feedback flowing while inputs
 arrive in small blocks, at different rates, or late.
 
-![System architecture](docs/media/architecture.svg)
+## Demos
+
+### Robot and scene / 24-second loop
+
+![Procedural robot tour with scripted base, lift, head and arm motion](docs/media/scene.gif)
+
+A full orbit around the procedural desk and robot, with scripted base, lift, head
+and dual-arm poses. Kinematic illustration only: no physics, live camera feeds,
+physical robot or new performance measurement.
+
+### Voice / two real speakers, before and after
+
+https://github.com/user-attachments/assets/09a4814e-45ed-489b-9a84-d38ac2974e98
+
+33 seconds: **p226 original -> robot**, then **p237 original -> robot**. Both
+speakers read the same sentence from CSTR VCTK 0.92. Source recordings and DSP/video
+adaptations retain **CC BY 4.0**: Yamagishi, Veaux & MacDonald (2019), University of
+Edinburgh CSTR, [dataset](https://doi.org/10.7488/ds/2645).
+[Subtitles](docs/media/voice_demo.srt) / [source and changes](docs/media/voice_sources.json).
+This illustrates the default CPU DSP; it is not a new listening or latency result.
 
 ## What it does
 
@@ -20,14 +39,7 @@ against timestamped live observations. Old, live, stale and unknown geometry hav
 separate states. The public demo generates a procedural desk; the original home
 scan and recordings are excluded.
 
-![Procedural robot and scene demonstration](docs/media/scene.gif)
-
-*Procedural illustration generated from this repository's robot geometry. This is
-not a recording of a physical robot or a new performance benchmark.*
-
-[Watch the 25-second synthetic voice comparison](docs/media/voice_demo.mp4)
-([subtitles](docs/media/voice_demo.srt)). The same neutral sentence is heard first
-as system TTS and then through the default robot character.
+![System architecture](docs/media/architecture.svg)
 
 ## Quick start
 

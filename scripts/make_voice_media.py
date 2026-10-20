@@ -1,44 +1,82 @@
+"""Render the approved two-speaker VCTK comparison from bundled source WAVs."""
 from pathlib import Path
-import os,sys,json,subprocess
-import numpy as np, soundfile as sf
-from PIL import Image,ImageDraw,ImageFont
+import hashlib, json, os, subprocess, sys
+import numpy as np
+import soundfile as sf
+from PIL import Image, ImageDraw, ImageFont
 import imageio_ffmpeg
-D=Path(__file__).resolve().parents[1];M=D/'docs/media'
-sys.path[:0]=[str(D/'voice/src'),str(D/'voice')]
-from eval.convert import read48,convert
-os.environ['NUMBA_CACHE_DIR']=str(D/'cache/numba')
-x=read48(M/'voice_input.wav');y,_,_=convert(x,'v8',D/'voice/configs/v8a_B.yaml')
-assert np.isfinite(y).all() and np.max(np.abs(y))<=1
-sf.write(M/'voice_robot.wav',y,48000,subtype='PCM_16')
-# Rewrite the generated source WAV too; no ancillary recording metadata.
-sf.write(M/'voice_input.wav',x,48000,subtype='PCM_16')
-gap=np.zeros(24000,np.float32);combined=np.r_[x,gap,y]
-sf.write(D/'outputs/comparison.wav',combined,48000)
-font=ImageFont.truetype('C:/Windows/Fonts/segoeui.ttf',28)
-small=ImageFont.truetype('C:/Windows/Fonts/segoeui.ttf',20)
-bold=ImageFont.truetype('C:/Windows/Fonts/segoeuib.ttf',42)
-for kind,title,color in [('raw','Synthetic source',(100,202,188)),('robot','Default robot character',(234,183,124))]:
-    im=Image.new('RGB',(1280,720),(17,28,37));draw=ImageDraw.Draw(im)
-    draw.text((65,55),'Relay Workbench',font=bold,fill='white')
-    draw.text((65,140),title,font=font,fill=color)
-    draw.text((65,200),'Local CPU audio / causal DSP / synthetic speech',font=small,fill='#a8bdc7')
-    lines=['Relay Workbench processes voice in small audio blocks.',
-           'The robot character runs locally on the CPU.',
-           'This example uses synthetic speech.']
-    for i,line in enumerate(lines):draw.text((65,315+45*i),line,font=font,fill='white')
-    draw.line((65,520,1215,520),fill=color,width=2)
-    draw.text((65,560),'Functional demonstration; no latency or human listening claim.',font=small,fill='#a8bdc7')
-    draw.text((65,600),'System TTS: Microsoft Hazel / same sentence in both segments',font=small,fill='#a8bdc7')
-    im.save(D/'outputs'/f'{kind}.png')
-duration=len(x)/48000
-ff=imageio_ffmpeg.get_ffmpeg_exe()
-subprocess.run([ff,'-y','-loglevel','error','-loop','1','-t',str(duration+.5),'-i',str(D/'outputs/raw.png'),
- '-loop','1','-t',str(duration),'-i',str(D/'outputs/robot.png'),'-i',str(D/'outputs/comparison.wav'),
- '-filter_complex','[0:v][1:v]concat=n=2:v=1:a=0[v]','-map','[v]','-map','2:a','-map_metadata','-1',
- '-c:v','libx264','-preset','fast','-crf','28','-pix_fmt','yuv420p','-r','10','-c:a','aac','-b:a','128k','-shortest','-movflags','+faststart',str(M/'voice_demo.mp4')],check=True)
+
+ROOT = Path(__file__).resolve().parents[1]
+MEDIA = ROOT / 'docs/media'
+os.environ['NUMBA_CACHE_DIR'] = str(ROOT / 'cache/numba')
+sys.path[:0] = [str(ROOT / 'voice/src'), str(ROOT / 'voice')]
+from eval.convert import read48, convert
+
+
 def stamp(t):
-    ms=round(t*1000);return f'{ms//3600000:02d}:{ms//60000%60:02d}:{ms//1000%60:02d},{ms%1000:03d}'
-text=(M/'narration.txt').read_text(encoding='utf-8-sig').strip()
-(M/'voice_demo.srt').write_text(f'1\n{stamp(0)} --> {stamp(duration)}\nSynthetic source: {text}\n\n2\n{stamp(duration+.5)} --> {stamp(2*duration+.5)}\nDefault robot character: {text}\n',encoding='utf-8')
-(D/'outputs/voice_media.json').write_text(json.dumps({'source':'Microsoft Hazel system TTS','script':text,'source_duration_s':duration,'video_duration_s':2*duration+.5,'human_recording':False,'original_target_embedding_used_for_this_dsp_demo':False},indent=2))
-print(f'Generated {2*duration+.5:.2f}s neutral synthetic comparison; original input/output speech is excluded.')
+    ms = round(t * 1000)
+    return f'{ms//3600000:02d}:{ms//60000%60:02d}:{ms//1000%60:02d},{ms%1000:03d}'
+
+
+def main():
+    manifest = json.loads((MEDIA / 'voice_sources.json').read_text())
+    font = ImageFont.truetype('C:/Windows/Fonts/segoeui.ttf', 26)
+    small = ImageFont.truetype('C:/Windows/Fonts/segoeui.ttf', 19)
+    bold = ImageFont.truetype('C:/Windows/Fonts/segoeuib.ttf', 40)
+    rate, fps = 48000, 12
+    segments, subtitles = [], []
+    for clip in manifest['clips']:
+        source = MEDIA / clip['file']
+        assert hashlib.sha256(source.read_bytes()).hexdigest() == clip['sha256']
+        x = read48(source)
+        y, _, _ = convert(x, 'v8', ROOT / 'voice/configs/v8a_B.yaml')
+        assert np.isfinite(y).all() and np.max(np.abs(y)) <= 1
+        for label, audio in [('Original recording', x), ('Default robot character', y)]:
+            count = int(np.ceil((len(audio) / rate + .6) * fps))
+            padded = np.pad(audio, (0, count * (rate // fps) - len(audio)))
+            segments.append((clip, label, audio, padded, count))
+    combined = np.concatenate([s[3] for s in segments])
+    work = ROOT / 'outputs/voice_media'
+    work.mkdir(parents=True, exist_ok=True)
+    sf.write(work / 'comparison.wav', combined, rate, subtype='PCM_16')
+    ff = imageio_ffmpeg.get_ffmpeg_exe()
+    process = subprocess.Popen([ff, '-y', '-loglevel', 'error', '-f', 'rawvideo',
+        '-pixel_format', 'rgb24', '-video_size', '1280x720', '-framerate', str(fps),
+        '-i', '-', '-i', str(work / 'comparison.wav'), '-map_metadata', '-1',
+        '-c:v', 'libx264', '-crf', '26', '-preset', 'fast', '-pix_fmt', 'yuv420p',
+        '-c:a', 'aac', '-b:a', '128k', '-shortest', '-movflags', '+faststart',
+        str(MEDIA / 'voice_demo.mp4')], stdin=subprocess.PIPE)
+    elapsed = 0
+    for clip, label, audio, padded, count in segments:
+        duration = count / fps
+        subtitles.append(f'{len(subtitles)+1}\n{stamp(elapsed)} --> {stamp(elapsed+len(audio)/rate)}\n'
+                         f"{clip['speaker']} / {label}: {clip['text']}\n")
+        color = '#64cabc' if label == 'Original recording' else '#eab77c'
+        peaks = [float(np.max(np.abs(b))) if len(b) else 0 for b in np.array_split(audio, 550)]
+        for frame in range(count):
+            im = Image.new('RGB', (1280, 720), '#111c25')
+            draw = ImageDraw.Draw(im)
+            draw.text((60, 40), 'Relay Workbench / Voice', font=bold, fill='white')
+            draw.text((60, 105), f"{clip['speaker']}  /  {label}", font=font, fill=color)
+            draw.text((60, 153), 'Same recording before and after the local CPU DSP pipeline', font=small, fill='#a8bdc7')
+            progress = min(1, frame / fps / (len(audio) / rate))
+            for i, peak in enumerate(peaks):
+                xpos = 65 + i * 2.08; height = max(1, peak * 150)
+                draw.line((xpos, 290-height, xpos, 290+height), fill=color if i/550 <= progress else '#3a4d5a', width=2)
+            draw.line((65+1144*progress, 205, 65+1144*progress, 375), fill='white', width=2)
+            draw.text((60, 420), 'Six spoons of fresh snow peas, five thick slabs of blue cheese,', font=font, fill='white')
+            draw.text((60, 460), 'and maybe a snack for her brother Bob.', font=font, fill='white')
+            draw.text((60, 548), 'CSTR VCTK 0.92 / p226_003_mic2 + p237_003_mic2 / CC BY 4.0', font=small, fill='#a8bdc7')
+            draw.text((60, 580), 'Yamagishi, Veaux & MacDonald (2019), University of Edinburgh CSTR', font=small, fill='#a8bdc7')
+            draw.text((60, 612), 'doi.org/10.7488/ds/2645 / Audio adapted with DSP; no endorsement implied.', font=small, fill='#a8bdc7')
+            draw.text((60, 650), 'Illustrative comparison; not a new quality or latency measurement.', font=small, fill='#a8bdc7')
+            process.stdin.write(im.tobytes())
+        elapsed += duration
+    process.stdin.close()
+    assert process.wait() == 0
+    (MEDIA / 'voice_demo.srt').write_text('\n'.join(subtitles), encoding='utf-8')
+    print(json.dumps({'duration_s': elapsed, 'speakers': 2, 'source': 'CSTR VCTK 0.92', 'system': 'v8 / v8a_B.yaml', 'speech_trimmed': False, 'speech_normalized': False}))
+
+
+if __name__ == '__main__':
+    main()
