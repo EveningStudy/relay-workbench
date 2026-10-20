@@ -45,16 +45,18 @@ camera/depth frames and 20 joint/odometry messages. It is a functional check.
 
 ## Phone video and camera position in the scene
 
-The phone GIF/comparison MP4 places approved source seconds 6-18 beside the kitchen
-operator scene. The original checkerboard detector and PnP estimator derive the
+The phone GIF/comparison MP4 places approved source seconds 18.4-26.4 beside the
+kitchen operator scene. The original checkerboard detector and PnP estimator derive the
 phone's position/orientation from image corners, using measured board placement
 and historical video-fitted intrinsics. These numerical calibration parameters
 are bundled without calibration photos. The camera axes/frustum move only for
 valid poses. Failed detections hide the current frustum; the trail keeps valid
 history and does not connect across failures. There is no interpolation.
 
-31/72 sampled frames have a pose; 41 do not. Reprojection residuals describe the
-board fit, not independent world-space accuracy. This is an offline RGB pose
+The 8-second excerpt has 48/48 valid samples at 6 fps. Checking every encoded
+15 fps input frame also gave 120/120 valid poses. This segment was selected for
+continuous tracking; it is not a full-recording success rate. Reprojection
+residuals describe the board fit, not independent world-space accuracy. This is an offline RGB pose
 diagnostic, with no physical robot, depth fusion or hardware-latency measurement.
 
 With the operator open, stop other camera publishers and run:
@@ -111,7 +113,7 @@ To rebuild the synchronized phone demo from the bundled silent input:
 ```
 
 Stop the operator first, then open the render page as above. The script captures
-72 Viser frames and pairs each with the corresponding undistorted phone frame.
+48 Viser frames and pairs each with the corresponding undistorted phone frame.
 `make_phone_media.py <owner-provided-source>` restores only the approved silent
 input interval. The full source is intentionally absent. Kitchen/phone assets and their
 derivatives have public display permission only, with no reuse licence; see

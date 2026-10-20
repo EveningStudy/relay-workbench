@@ -14,8 +14,9 @@ no neural checkpoint. Historical measurements were not rerun.
 | `run.ps1 cameras --speed 1` | Passed | Independent subscriber received 288 RGB frames (72 per robot camera), 240 joints and 233 odometry messages; no depth. |
 | Operator + recorded replay | Passed | Edge showed all four 6 fps streams, moving joint state, stereo images and circular wrist views. Functional display check, no timing benchmark. |
 | Scene GIF | Passed | 144 fully decoded frames, 24 seconds at 6 fps; actual Viser rendering of the kitchen prior and joint replay. |
-| Camera and phone GIFs | Passed | 72 fully decoded frames / 12 seconds each; contact-sheet visual review. |
-| Phone MP4 | Passed | Full decode; exactly 12 seconds, no audio or subtitle stream, no location metadata. |
+| Camera GIFs | Passed | 72 fully decoded frames / 12 seconds each; contact-sheet visual review. |
+| Phone GIF | Passed | 48 fully decoded frames / 8 seconds; contact-sheet visual review. |
+| Phone MP4 | Passed | Full decode; exactly 8 seconds, no audio or subtitle stream, no location metadata. |
 | `python scripts/results.py --check` | Passed | Page matches retained summaries; no new benchmark. |
 
 An initial 10x accelerated camera replay lost messages through the bounded
@@ -53,25 +54,35 @@ is reused with explicit bundled world-space board points, avoiding private
 calibration-photo paths. Its default private-input API remains compatible.
 Historical camera intrinsics fitted to the video are scaled to the public clip.
 
-Recomputing 72 samples at 6 fps gave 31 valid poses and 41 unavailable samples.
+The owner approved a replacement interval, original seconds 18.4-26.4, after
+reviewing a private synchronized preview. The 8-second segment was selected to
+avoid the previous excerpt's long tracking outage. Recomputing 48 samples at
+6 fps gave 48 valid poses and zero unavailable samples. Checking every encoded
+15 fps input frame also gave 120/120 valid poses. These rates describe the
+selected excerpt, not the whole source recording. The earlier 10 Hz source
+manifest also has an uninterrupted valid run covering this interval.
+
 Valid rotations are orthonormal, camera positions lie above the board, and board
-reprojection RMS ranges from 0.090 to 1.786 px. These are fit diagnostics on this
-presentation excerpt, not independent world accuracy or a new benchmark. No
-missing pose is interpolated. The current frustum is hidden on failure; the
+reprojection RMS ranges from 0.084 to 0.164 px at 6 fps. These are fit diagnostics on
+this presentation excerpt, not independent world accuracy or a new benchmark.
+No missing pose is interpolated. The current frustum is hidden on failure; the
 history trail never connects across a failed sample.
 
-The GIF contains 72 fully decoded frames and is exactly 12 seconds. The matching
+The GIF contains 48 fully decoded frames and is exactly 8 seconds. The matching
 MP4 fully decodes with no audio or subtitle stream and no location metadata.
 The 69 lightweight tests, default smoke replay and retained-results check passed
-again after the explicit-board-points API change. Both input and output are
-limited to the approved original seconds 6-18. All personal derivatives retain
-copyright with public display permission only.
+again after this update. Both current input and output are limited to the
+approved original seconds 18.4-26.4. All personal derivatives retain copyright
+with public display permission only.
 
-Three normal-speed loops delivered all 216 RGB frames and 216 camera-pose status
-messages to an independent subscriber, including 93 valid and 123 unavailable
-poses. The operator consumed all 216 frames with zero recorded queue overflows.
-Edge showed the textured phone frustum for a valid pose and hid it on detection
-failure; the phone panel and RGB-only scan-projection diagnostic also displayed.
+Three normal-speed loops delivered all 144 RGB frames and 144 camera-pose status
+messages to an independent subscriber, all with valid poses. The operator
+consumed all 144 frames with zero recorded queue overflows.
+The earlier 6-18-second version delivered 216 RGB and 216 pose messages, including
+93 valid and 123 unavailable poses; the operator consumed all 216 frames with
+zero recorded queue overflows. Edge showed the textured frustum for a valid pose
+and hid it on failure. Those UI failure-state observations belong to that earlier
+version; the new renderer captures the continuously valid replacement.
 
 ## Earlier setup and voice checks
 

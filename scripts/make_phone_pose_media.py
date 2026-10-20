@@ -15,6 +15,7 @@ from p2.ui.operator_ui import OperatorUI
 def main():
     os.chdir(ROOT/'scene_robot')
     cfg=json.loads(CAMERA.read_text());track=json.loads(TRACK.read_text())
+    start,end=track['source_interval_s'];total=len(track['frames']);fps=track['fps']
     k=np.asarray(cfg['camera_matrix']);d=np.asarray(cfg['distortion'])
     frames=[cv2.undistort(rgb,k,d) for rgb in images()]
     ui=OperatorUI();ui.header.content='# Relay\nPhone RGB and checkerboard-derived camera pose'
@@ -56,7 +57,7 @@ def main():
             rendered=client.get_render(480,720,position=position,wxyz=viewquat,fov=.85,timeout=30)
             canvas=Image.new('RGB',(1280,648),'#101c26');draw=ImageDraw.Draw(canvas)
             draw.text((24,12),'Relay / Phone video -> camera pose in the kitchen',font=bold,fill='#edf4f7')
-            draw.text((24,49),f"Source {row['original_t_s']:05.2f}s / approved 6-18s / known checkerboard placement / RGB only",font=small,fill='#a8becb')
+            draw.text((24,49),f"Source {row['original_t_s']:05.2f}s / approved {start:g}-{end:g}s / known checkerboard placement / RGB only",font=small,fill='#a8becb')
             canvas.paste(Image.fromarray(rgb).resize((512,288)),(24,116))
             # Fixed crop keeps the phone, board and robot legible in the README.
             view=Image.fromarray(rendered[:,:,:3]).crop((150,110,600,410)).resize((720,480))
@@ -72,17 +73,17 @@ def main():
                 reason=row['reason'].replace('_',' ')
                 draw.text((24,461),reason,font=small,fill='#a8becb')
                 draw.text((24,491),f'Last valid: {last_valid:.2f}s / no pose interpolation' if last_valid is not None else 'No valid pose yet / no interpolation',font=small,fill='#a8becb')
-            draw.text((24,533),f"{track['valid']}/72 sampled frames have a pose",font=small,fill='#a8becb')
-            draw.text((24,563),'Track gaps retained / cyan trail = valid history',font=small,fill='#a8becb')
+            draw.text((24,533),f"{track['valid']}/{total} sampled frames have a pose",font=small,fill='#a8becb')
+            draw.text((24,563),'Cyan trail = valid history / no pose interpolation',font=small,fill='#a8becb')
             draw.rectangle((0,610,1280,648),fill='#0b141c')
             draw.text((24,620),'Offline image-derived pose / fixed kitchen scan / no physical robot, real depth fusion or new timing result',font=small,fill='#a8becb')
             canvas.save(out/f'{row["seq"]:03}.png');output.append(canvas)
-            if row['seq']%12==0:print(f"Rendered {row['seq']}/72",flush=True)
-        dest=ROOT/'docs/media';encode(output,dest/'phone.gif',width=960)
+            if row['seq']%12==0:print(f"Rendered {row['seq']}/{total}",flush=True)
+        dest=ROOT/'docs/media';encode(output,dest/'phone.gif',fps=fps,width=960)
         ff=imageio_ffmpeg.get_ffmpeg_exe()
-        subprocess.run([ff,'-y','-v','error','-framerate','6','-i',str(out/'%03d.png'),'-an','-map_metadata','-1',
+        subprocess.run([ff,'-y','-v','error','-framerate',str(fps),'-i',str(out/'%03d.png'),'-frames:v',str(total),'-an','-map_metadata','-1',
             '-vf','scale=960:-2','-c:v','libx264','-crf','23','-pix_fmt','yuv420p',str(dest/'phone_pose.mp4')],check=True)
-        print(json.dumps({'frames':72,'duration_s':12,'valid':track['valid'],'gif_bytes':(dest/'phone.gif').stat().st_size,'mp4_bytes':(dest/'phone_pose.mp4').stat().st_size}),flush=True)
+        print(json.dumps({'frames':total,'duration_s':track['duration_s'],'valid':track['valid'],'gif_bytes':(dest/'phone.gif').stat().st_size,'mp4_bytes':(dest/'phone_pose.mp4').stat().st_size}),flush=True)
     finally:ui.close()
 
 if __name__=='__main__':main()

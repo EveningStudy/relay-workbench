@@ -52,23 +52,23 @@
   },
   "phone": {
     "approved_source_excerpt_s": [
-      6,
-      18
+      18.4,
+      26.4
     ],
-    "duration_s": 12,
+    "duration_s": 8,
     "audio_stream": false,
     "metadata_removed": true,
     "source_sha256": "a00541eee50c8a7af8686cc7093a1008ac05aa74e1945b54535aa22d005e662f",
-    "scope": "Only excerpt and GIF approved; full original excluded",
+    "scope": "Owner approved original seconds 18.4-26.4, its silent comparison and GIF after private preview; full original excluded.",
     "demonstration": "Approved recorded RGB synchronized with checkerboard-derived camera position, orientation, frustum and valid history in the fixed kitchen scan.",
     "pose_source": "Recomputed from the bundled silent public excerpt using the original detector/PnP; known measured board placement and historical video-fitted intrinsics scaled to 960x540.",
     "sample_fps": 6,
-    "pose_samples": 72,
-    "valid_poses": 31,
-    "unavailable_poses": 41,
+    "pose_samples": 48,
+    "valid_poses": 48,
+    "unavailable_poses": 0,
     "invalid_policy": "Hide current frustum. Retain valid history without connecting across gaps. No interpolation.",
     "geometry_scope": "Image-derived pose diagnostic; no independent world-accuracy validation, real depth fusion or hardware-latency measurement.",
-    "renderer": "72 actual Viser client renders, paired with undistorted phone RGB; fixed viewport crop for legibility.",
+    "renderer": "48 actual Viser client renders, paired with undistorted phone RGB; fixed viewport crop for legibility.",
     "replay_command": "run.ps1 phone --loops 3",
     "numeric_parameters": {
       "phone_camera.json": {
@@ -76,9 +76,16 @@
         "sha256": "5b7461a842c2ef4209c82b6a61e6a4dd06c6f1894e191bfd45ff9ad8c2a182a4"
       },
       "phone_track.json": {
-        "bytes": 32178,
-        "sha256": "c12a64278d296e5c4875efc893a3c139fe081a2da83091aa9cb1136b3ff70da3"
+        "bytes": 37699,
+        "sha256": "23dc52591cfd4081f513f2d007bc862a8ba77a6ff7470b0d8e6956c747d35648"
       }
+    },
+    "selection": "Selected for continuous checkerboard tracking, not a full-recording success rate. Replaces the earlier 6-18-second presentation excerpt.",
+    "all_encoded_frames_check": {
+      "fps": 15,
+      "frames": 120,
+      "valid": 120,
+      "unavailable": 0
     }
   },
   "outputs": {
@@ -95,20 +102,20 @@
       "sha256": "a3fbcd624cbd80eb92fac996ac8a37d612ea5f8c74e3430e36a9e9a3a91a1b35"
     },
     "phone.gif": {
-      "bytes": 2424622,
-      "sha256": "d4e419db7aede63d177acec219b2c31aee380e22515e00ed8a27332c9b033aa6"
+      "bytes": 1822504,
+      "sha256": "f3042f358ef16fef30a854c138b7932ab23c10744a6900dbd7cfe73c1bf745c4"
     },
     "phone_excerpt.mp4": {
-      "bytes": 757764,
-      "sha256": "66d47c5c9b009ad77509047086ac91c22493014a2e3407f2ff8abf7143004099"
+      "bytes": 606457,
+      "sha256": "07665e35f9e35eed1ace769fbd7eb035982bc5294963842b59b06ee1daaf9d90"
     },
     "operator.png": {
       "bytes": 137080,
       "sha256": "e48eb4b767edfdddd78f938c83f6f568b2c09ff45823586bedf4f449a4022fe0"
     },
     "phone_pose.mp4": {
-      "bytes": 283433,
-      "sha256": "f3586c117d7a9f7e4add8e07ce0ecc53d56bf751043381b8968688274d8923f7"
+      "bytes": 274560,
+      "sha256": "2d841a1b844f7c0c7ef294c629acdbf409b73124a6cbadb7163e705692ea501c"
     }
   }
 }

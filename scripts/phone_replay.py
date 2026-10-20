@@ -11,10 +11,11 @@ TRACK=ROOT/'scene_robot/assets/kitchen/phone_track.json'
 VIDEO=ROOT/'docs/media/phone_excerpt.mp4'
 
 def images():
+    track=json.loads(TRACK.read_text());fps=track['fps']
     cap=cv2.VideoCapture(str(VIDEO));frames=[]
     try:
-        for i in range(72):
-            cap.set(cv2.CAP_PROP_POS_MSEC,i/6*1000);ok,bgr=cap.read()
+        for i in range(round(track['duration_s']*fps)):
+            cap.set(cv2.CAP_PROP_POS_MSEC,i/fps*1000);ok,bgr=cap.read()
             if not ok:raise RuntimeError(f'Phone excerpt frame {i} could not be decoded')
             frames.append(cv2.cvtColor(bgr,cv2.COLOR_BGR2RGB))
     finally:cap.release()
@@ -23,16 +24,17 @@ def images():
 def prepare():
     from p2.io.phone_pose import estimate
     cv2.setNumThreads(1)
+    track=json.loads(TRACK.read_text());fps=track['fps'];start,end=track['source_interval_s']
     cfg=json.loads(CAMERA.read_text());k=np.asarray(cfg['camera_matrix']);d=np.asarray(cfg['distortion']);rows=[]
     for i,rgb in enumerate(images()):
         pose,reason=estimate(cv2.cvtColor(rgb,cv2.COLOR_RGB2GRAY),k,d,cfg['board_world_points'])
         if pose:pose.pop('corners')
-        rows.append({'seq':i+1,'t_s':i/6,'original_t_s':6+i/6,'pose':pose,'reason':reason})
-    result={'fps':6,'duration_s':12,'width':960,'height':540,'source_interval_s':[6,18],
+        rows.append({'seq':i+1,'t_s':i/fps,'original_t_s':start+i/fps,'pose':pose,'reason':reason})
+    result={'fps':fps,'duration_s':end-start,'width':960,'height':540,'source_interval_s':[start,end],
         'method':'Original checkerboard detector/PnP, recomputed from the approved silent public excerpt. Known measured board pose and historical video-fitted intrinsics; not independent world accuracy or hardware latency.',
         'invalid_policy':'No interpolation. Hide current frustum whenever pose is unavailable.',
         'valid':sum(r['pose'] is not None for r in rows),'frames':rows}
-    TRACK.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+    TRACK.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps({'prepared':len(rows),'valid':result['valid'],'unavailable':len(rows)-result['valid']}))
 
 def replay(loops,speed):

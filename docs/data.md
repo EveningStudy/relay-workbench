@@ -26,11 +26,11 @@ They are excluded from the root Apache-2.0 licence.
 | `docs/media/scene.gif` | 24-second orbit of kitchen scan, robot joint replay and camera mounts. |
 | `docs/media/cameras.gif` | 12-second stereo-head and two-wrist simulator RGB panel. |
 | `docs/media/wrists.gif` | 12-second two-wrist simulator RGB panel. |
-| `docs/media/phone.gif` | Synchronized phone RGB and its estimated camera pose/frustum in the kitchen; original seconds 6-18 only. |
-| `docs/media/phone_excerpt.mp4` | Same approved 12-second phone interval, silent, metadata removed. |
+| `docs/media/phone.gif` | Synchronized phone RGB and its estimated camera pose/frustum in the kitchen; original seconds 18.4-26.4 only. |
+| `docs/media/phone_excerpt.mp4` | Same approved 8-second phone interval, silent, metadata removed. |
 | `docs/media/phone_pose.mp4` | Silent phone/scene comparison, matching the phone GIF. |
 | `scene_robot/assets/kitchen/phone_camera.json` | Historical video-fitted intrinsics and measured board corners in local kitchen coordinates; no calibration photos. |
-| `scene_robot/assets/kitchen/phone_track.json` | Board-derived poses and failures recomputed from the approved excerpt, 72 samples at 6 fps. |
+| `scene_robot/assets/kitchen/phone_track.json` | Board-derived poses and failures recomputed from the approved excerpt, 48 samples at 6 fps. |
 | `docs/media/operator.png` | Still from the kitchen scan demonstration. |
 | `docs/media/scene_sources.json` | Derivation, hashes and exact permission boundaries. |
 

@@ -47,11 +47,14 @@ public sample supplies RGB only; wrist depth in the full simulator is simulated.
 
 ![Phone video alongside its estimated camera position and viewing direction in the kitchen scan](docs/media/phone.gif)
 
-Left: the approved phone recording, original seconds 6-18. Right: the same kitchen
-scan with the phone's image-derived position, orientation and camera frustum.
+Left: the approved phone recording, original seconds 18.4-26.4 (8 seconds).
+Right: the same kitchen scan with the phone's image-derived position, orientation
+and camera frustum.
 The checkerboard's measured placement anchors PnP estimates to the scene.
 Valid samples leave a cyan trail; failed detections hide the current frustum,
-with no interpolation. **31/72 sampled frames have a pose; 41 are unavailable.**
+with no interpolation. **48/48 sampled frames have a pose.** The silent input
+also passed a frame-by-frame check at 15 fps (120/120 valid); this is a selected
+presentation segment, not a full-recording detection rate.
 [Silent comparison MP4](docs/media/phone_pose.mp4). This is an offline RGB pose
 diagnostic, with video-fitted intrinsics, not independent world accuracy or real
 depth fusion. No USB camera footage was saved in the inspected source material.

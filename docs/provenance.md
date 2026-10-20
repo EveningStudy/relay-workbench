@@ -26,8 +26,11 @@ new synthetic replay validate only their stated functional contracts.
   Measured fitted primitive dimensions are retained; calibration photos and full
   raw episodes remain excluded. The short sampled RGB/state replay is a
   presentation excerpt and does not inherit historical benchmark claims.
-- The owner approved only seconds 6-18 of a physical phone recording, silent,
-  plus its GIF. Personal media has display permission and no reuse licence.
+- The owner approved the replacement phone interval, original seconds 18.4-26.4,
+  plus its silent comparison video and GIF after reviewing a private preview.
+  It replaces the earlier 6-18-second excerpt to avoid a long tracking outage.
+  This is presentation selection; it does not replace full-recording results.
+  Personal media has display permission and no reuse licence.
 - The phone demonstration now recomputes board-derived camera poses from that
   approved excerpt. The original pose estimator accepts explicit measured board
   points so the public replay needs no private photo/measurement folders. Its
