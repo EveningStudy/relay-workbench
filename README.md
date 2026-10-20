@@ -17,7 +17,7 @@ physical robot or new performance measurement.
 
 ### Voice / two real speakers, before and after
 
-https://github.com/user-attachments/assets/09a4814e-45ed-489b-9a84-d38ac2974e98
+https://github.com/user-attachments/assets/bc628975-930f-4e37-ac07-75ffc2d9f9eb
 
 33 seconds: **p226 original -> robot**, then **p237 original -> robot**. Both
 speakers read the same sentence from CSTR VCTK 0.92. Source recordings and DSP/video
