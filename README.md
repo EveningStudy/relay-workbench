@@ -45,7 +45,7 @@ public sample supplies RGB only; wrist depth in the full simulator is simulated.
 
 ### Phone video to camera pose / kitchen operator view
 
-![Phone video alongside its estimated camera position and viewing direction in the kitchen scan](docs/media/phone.gif)
+![Phone video alongside its estimated camera position and viewing direction in the kitchen scan](docs/media/phone.gif?v=continuous8)
 
 Left: the approved phone recording, original seconds 18.4-26.4 (8 seconds).
 Right: the same kitchen scan with the phone's image-derived position, orientation
