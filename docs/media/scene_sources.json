@@ -59,7 +59,27 @@
     "audio_stream": false,
     "metadata_removed": true,
     "source_sha256": "a00541eee50c8a7af8686cc7093a1008ac05aa74e1945b54535aa22d005e662f",
-    "scope": "Only excerpt and GIF approved; full original excluded"
+    "scope": "Only excerpt and GIF approved; full original excluded",
+    "demonstration": "Approved recorded RGB synchronized with checkerboard-derived camera position, orientation, frustum and valid history in the fixed kitchen scan.",
+    "pose_source": "Recomputed from the bundled silent public excerpt using the original detector/PnP; known measured board placement and historical video-fitted intrinsics scaled to 960x540.",
+    "sample_fps": 6,
+    "pose_samples": 72,
+    "valid_poses": 31,
+    "unavailable_poses": 41,
+    "invalid_policy": "Hide current frustum. Retain valid history without connecting across gaps. No interpolation.",
+    "geometry_scope": "Image-derived pose diagnostic; no independent world-accuracy validation, real depth fusion or hardware-latency measurement.",
+    "renderer": "72 actual Viser client renders, paired with undistorted phone RGB; fixed viewport crop for legibility.",
+    "replay_command": "run.ps1 phone --loops 3",
+    "numeric_parameters": {
+      "phone_camera.json": {
+        "bytes": 7727,
+        "sha256": "5b7461a842c2ef4209c82b6a61e6a4dd06c6f1894e191bfd45ff9ad8c2a182a4"
+      },
+      "phone_track.json": {
+        "bytes": 32178,
+        "sha256": "c12a64278d296e5c4875efc893a3c139fe081a2da83091aa9cb1136b3ff70da3"
+      }
+    }
   },
   "outputs": {
     "scene.gif": {
@@ -75,8 +95,8 @@
       "sha256": "a3fbcd624cbd80eb92fac996ac8a37d612ea5f8c74e3430e36a9e9a3a91a1b35"
     },
     "phone.gif": {
-      "bytes": 6590232,
-      "sha256": "4bb7e5c7440ddedcb5efc740962745ff23cdd005d17fa0681ae106ccf6ae4625"
+      "bytes": 2424622,
+      "sha256": "d4e419db7aede63d177acec219b2c31aee380e22515e00ed8a27332c9b033aa6"
     },
     "phone_excerpt.mp4": {
       "bytes": 757764,
@@ -85,6 +105,10 @@
     "operator.png": {
       "bytes": 137080,
       "sha256": "e48eb4b767edfdddd78f938c83f6f568b2c09ff45823586bedf4f449a4022fe0"
+    },
+    "phone_pose.mp4": {
+      "bytes": 283433,
+      "sha256": "f3586c117d7a9f7e4add8e07ce0ecc53d56bf751043381b8968688274d8923f7"
     }
   }
 }

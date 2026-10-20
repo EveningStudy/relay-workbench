@@ -1,4 +1,4 @@
-param([ValidateSet('smoke','test','voice','scene','operator','simulator','cameras')][string]$Task = 'smoke', [Parameter(ValueFromRemainingArguments=$true)][string[]]$Rest)
+param([ValidateSet('smoke','test','voice','scene','operator','simulator','cameras','phone')][string]$Task = 'smoke', [Parameter(ValueFromRemainingArguments=$true)][string[]]$Rest)
 $ErrorActionPreference = 'Stop'
 $relayPython = Join-Path $PSScriptRoot '.venv/Scripts/python.exe'
 if (-not (Test-Path $relayPython)) { throw 'Run setup.ps1 first.' }
@@ -18,6 +18,7 @@ try {
         'voice' { Set-Location voice; New-Item -ItemType Directory -Force results | Out-Null; & $relayPython -m relay_voice.app --low-only @Rest }
         'scene' { & $relayPython scripts/prepare_scene.py @Rest }
         'cameras' { & $relayPython scripts/kitchen_replay.py @Rest }
+        'phone' { & $relayPython scripts/phone_replay.py @Rest }
         'operator' { Set-Location scene_robot; & $relayPython -m p2.ui.operator_ui @Rest }
         'simulator' { Set-Location scene_robot; & $relayPython -m p2.sim.sim_node @Rest }
     }

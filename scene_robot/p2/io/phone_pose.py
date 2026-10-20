@@ -16,12 +16,15 @@ def board_points():
     return xyz
 
 
-def estimate(gray,k,d):
+def estimate(gray,k,d,world_points=None):
     corners,reason=detect(gray)
     if corners is None:return None,reason
     # The displayed PNG starts with a black outer square. With 11 by 8
     # squares its half-turn has opposite parity, resolving the usual 180 ambiguity.
-    model=np.mgrid[:10,:7].T.reshape(-1,2).astype(np.float32);points=board_points();candidates=[]
+    model=np.mgrid[:10,:7].T.reshape(-1,2).astype(np.float32)
+    points=board_points() if world_points is None else np.asarray(world_points,dtype=np.float32)
+    if points.shape!=(70,3):raise ValueError('Expected 70 measured world-space board corners')
+    candidates=[]
     grid=corners.reshape(7,10,2)
     # Detector image ordering can have either handedness. Resolve both reflections
     # with the physical above-desk constraint, then the half-turn with colour parity.

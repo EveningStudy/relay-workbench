@@ -43,11 +43,29 @@ metrics. Run only one camera publisher on port 5600 at a time.
 For a generated transport fixture, `run.ps1 smoke` still creates 80 simple
 camera/depth frames and 20 joint/odometry messages. It is a functional check.
 
-## Physical phone excerpt
+## Phone video and camera position in the scene
 
-The separate phone GIF/MP4 contains only approved source seconds 6-18, silent,
-with metadata removed. It shows real kitchen RGB, not a robot camera or depth
-measurement. The full phone source and calibration photos are excluded. The
+The phone GIF/comparison MP4 places approved source seconds 6-18 beside the kitchen
+operator scene. The original checkerboard detector and PnP estimator derive the
+phone's position/orientation from image corners, using measured board placement
+and historical video-fitted intrinsics. These numerical calibration parameters
+are bundled without calibration photos. The camera axes/frustum move only for
+valid poses. Failed detections hide the current frustum; the trail keeps valid
+history and does not connect across failures. There is no interpolation.
+
+31/72 sampled frames have a pose; 41 do not. Reprojection residuals describe the
+board fit, not independent world-space accuracy. This is an offline RGB pose
+diagnostic, with no physical robot, depth fusion or hardware-latency measurement.
+
+With the operator open, stop other camera publishers and run:
+
+```powershell
+.\run.ps1 phone --loops 3
+```
+
+Expand `real_phone` and `Real phone pose diagnostic` to see the recorded image,
+board-pose status and scan-projection diagnostic. The scene's phone frustum is
+hidden whenever no valid current pose is available. The full phone source and calibration photos are excluded. The
 inspected USB test directory contains recovery logs but no saved RGB footage;
 there is consequently no physical USB camera demonstration here.
 
@@ -85,7 +103,16 @@ It updates recorded joint poses and camera lens outlines while orbiting the scan
 It does not run physics or receive live camera feeds during this offline capture.
 The camera GIFs decode the bundled historical RGB, preserving fisheye aspect ratio.
 
-`make_phone_media.py <owner-provided-source>` rebuilds only the approved phone
-interval. The full source is intentionally absent. Kitchen/phone assets and their
+To rebuild the synchronized phone demo from the bundled silent input:
+
+```powershell
+.\run.ps1 phone --prepare
+.\.venv\Scripts\python.exe scripts/make_phone_pose_media.py
+```
+
+Stop the operator first, then open the render page as above. The script captures
+72 Viser frames and pairs each with the corresponding undistorted phone frame.
+`make_phone_media.py <owner-provided-source>` restores only the approved silent
+input interval. The full source is intentionally absent. Kitchen/phone assets and their
 derivatives have public display permission only, with no reuse licence; see
 [licensing](licensing.md).

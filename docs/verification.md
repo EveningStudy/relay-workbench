@@ -45,6 +45,34 @@ claim. During the sampled RGB replay the fusion map can suppress parts of the
 prior because its fitted camera geometry differs from the scan; the GIFs do not
 claim reconstruction improvement.
 
+## Phone pose demonstration
+
+The phone demo now pairs each approved RGB frame with its image-derived camera
+position/orientation in the kitchen scan. The original checkerboard detector/PnP
+is reused with explicit bundled world-space board points, avoiding private
+calibration-photo paths. Its default private-input API remains compatible.
+Historical camera intrinsics fitted to the video are scaled to the public clip.
+
+Recomputing 72 samples at 6 fps gave 31 valid poses and 41 unavailable samples.
+Valid rotations are orthonormal, camera positions lie above the board, and board
+reprojection RMS ranges from 0.090 to 1.786 px. These are fit diagnostics on this
+presentation excerpt, not independent world accuracy or a new benchmark. No
+missing pose is interpolated. The current frustum is hidden on failure; the
+history trail never connects across a failed sample.
+
+The GIF contains 72 fully decoded frames and is exactly 12 seconds. The matching
+MP4 fully decodes with no audio or subtitle stream and no location metadata.
+The 69 lightweight tests, default smoke replay and retained-results check passed
+again after the explicit-board-points API change. Both input and output are
+limited to the approved original seconds 6-18. All personal derivatives retain
+copyright with public display permission only.
+
+Three normal-speed loops delivered all 216 RGB frames and 216 camera-pose status
+messages to an independent subscriber, including 93 valid and 123 unavailable
+poses. The operator consumed all 216 frames with zero recorded queue overflows.
+Edge showed the textured phone frustum for a valid pose and hid it on detection
+failure; the phone panel and RGB-only scan-projection diagnostic also displayed.
+
 ## Earlier setup and voice checks
 
 The root setup previously installed a fresh venv using the hashed CPU lock;

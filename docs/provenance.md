@@ -28,6 +28,10 @@ new synthetic replay validate only their stated functional contracts.
   presentation excerpt and does not inherit historical benchmark claims.
 - The owner approved only seconds 6-18 of a physical phone recording, silent,
   plus its GIF. Personal media has display permission and no reuse licence.
+- The phone demonstration now recomputes board-derived camera poses from that
+  approved excerpt. The original pose estimator accepts explicit measured board
+  points so the public replay needs no private photo/measurement folders. Its
+  detector and PnP rules remain the same; all failed samples are retained.
 - Robot geometry is generated from the retained editable design. New recorder
   sessions use a generic operator label instead of a person's identity.
 - Tests retain their original assertions for audio DSP, callbacks, metrics,

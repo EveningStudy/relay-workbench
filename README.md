@@ -43,14 +43,18 @@ texture; they do not render the full Gaussian scan shown above.
 The circular 180-degree views retain the recorded arm occlusions. This small
 public sample supplies RGB only; wrist depth in the full simulator is simulated.
 
-### Physical phone camera / approved silent excerpt
+### Phone video to camera pose / kitchen operator view
 
-![Twelve seconds of real kitchen phone footage](docs/media/phone.gif)
+![Phone video alongside its estimated camera position and viewing direction in the kitchen scan](docs/media/phone.gif)
 
-Original seconds 6-18, with audio and metadata removed.
-[Silent MP4](docs/media/phone_excerpt.mp4). This is a separate real phone recording;
-it does not demonstrate robot-camera depth or geometry fusion. No USB camera
-footage was saved in the source material inspected.
+Left: the approved phone recording, original seconds 6-18. Right: the same kitchen
+scan with the phone's image-derived position, orientation and camera frustum.
+The checkerboard's measured placement anchors PnP estimates to the scene.
+Valid samples leave a cyan trail; failed detections hide the current frustum,
+with no interpolation. **31/72 sampled frames have a pose; 41 are unavailable.**
+[Silent comparison MP4](docs/media/phone_pose.mp4). This is an offline RGB pose
+diagnostic, with video-fitted intrinsics, not independent world accuracy or real
+depth fusion. No USB camera footage was saved in the inspected source material.
 
 Kitchen, phone and derived scene/camera media are copyright retained, with public
 display permission only and no reuse licence. See the [exact asset list](docs/data.md).
