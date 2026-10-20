@@ -1,14 +1,14 @@
 # Relay robot
 
-Provisional embodiment based on the brief architecture; no Relay reference CAD supplied.
+An experimental simulated robot with procedural meshes and declared design parameters. No physical robot was built.
 
 Editable source: `configs/robot.yaml` and `p2/robot/gen_robot.py`. Regenerate with `python -m p2.robot.gen_robot`.
 
-[proposal] Mesh volume times assumed homogeneous density from config supplies link masses and trimesh inertias. These are design assumptions, not hardware measurements. Collision uses bounding boxes. Self collision is disabled to avoid coincident virtual shoulder joints colliding; environment collision remains enabled. Gripper second fingers use URDF mimic joints.
+Mesh volume times assumed homogeneous density supplies link masses and trimesh inertias. These are design assumptions, not hardware measurements. Collision uses bounding boxes. Self collision is disabled because the virtual shoulder joints coincide; environment collision remains enabled. Gripper second fingers use URDF mimic joints.
 
-Raw SAPIEN joint drives implement PD position control for upper body and velocity control for the holonomic virtual base. This replaces ManiSkill's wrapper after the M1 readback failure.
+SAPIEN joint drives implement PD position control for the upper body and velocity control for the holonomic virtual base.
 
-All dimensions, joint limits, efforts, velocities and masses in the following tables are [proposal] design values, generated from the config and procedural source.
+All dimensions, joint limits, efforts, velocities and masses below are design values generated from the config and procedural source.
 
 | Joint | Type | Limits | Axis | Origin xyz | Origin rpy | Effort | Velocity |
 |---|---|---|---|---|---|---|---|
@@ -45,17 +45,9 @@ All dimensions, joint limits, efforts, velocities and masses in the following ta
 | right_finger_0_joint | prismatic | (0, 0.025) | (0, 1, 0) | (0, 0.025, 0) | [0, 0, 0] | 20 | 0.1 |
 | right_finger_1_joint | prismatic | (0, 0.025) | (0, -1, 0) | (0, -0.025, 0) | [0, 0, 0] | 20 | 0.1 |
 
-## Embodiment figures
+## Link geometry
 
-High-resolution source renders with red joint axes, blue stereo frusta and orange/pink 180-degree wrist hemispheres. All displayed dimensions are [proposal] values from the editable config; no hardware measurement is claimed.
-
-![Front](evidence/relay_front_highres.png)
-![Side](evidence/relay_side_highres.png)
-![Top](evidence/relay_top_highres.png)
-![Reach over desk](evidence/relay_reach_highres.png)
-![Dimensions](evidence/relay_dimensions.svg)
-
-Regenerate figures: `python -m p2.eval.robot_figures`. Camera/pose settings and design dimensions are logged in `docs/evidence/m19_robot.json`.
+Assumed masses, mesh dimensions and centres of mass follow. Open the procedural operator view to inspect the model.
 
 | Link | Mass kg | Size m | COM m |
 |---|---|---|---|
